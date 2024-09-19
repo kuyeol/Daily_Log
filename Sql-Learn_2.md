@@ -1,4 +1,4 @@
-#sevendatabase
+[[sevendatabase]]
 
 ### Aggregate Functions
 |     |                                                                          |
