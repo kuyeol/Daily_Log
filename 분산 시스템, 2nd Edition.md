@@ -131,24 +131,88 @@ Reduce: 〈키 , 값 목록 〉→ 〈 키 , 값〉목록
 
 
 
+/** main program**/
+real_main(argc,argv)
+int argc;
+char *argv[];
+{
+  int nslave, j, hello();
+  nslave = atoi (argv[1]);
+  for (j = 0; j < nslave; j++)
+  EVAL (“slave”, hello(j));
+  for(j = 0; j < nslave; j++)
+  IN(“done”);
+ printf(“Task completed.\n”);
+}
+/** subroutine hello **/
+  int hello (i)
+  int i;
+{
+  printf(“Task from number %d.\n”,i);
+  OUT(“done”);
+  return(0);
+}
+
+
+initially	current = home; best = price(home),
+	visit next; {next depends on a traversal algorithm}
+	{after reaching a new host}
+while	current ≠ home do
+if price(i) < best then best := price(i) else skip end if;
+	visit next;
+end while
+
+
+ 비 FIFO 채널을 사용하여 FIFO 채널 구현
+c를 프로세스 P에서 프로세스 Q로 가는 비 FIFO 채널이라고 하자
 
 
 
 
 
+{Sender process P}   {Receiver process Q}
+var i : integer {initially 0} var k : integer {initially 0}
+        buffer : buffer [0..∞] of
+         message
+repeat       {initially for all k:
+         buffer[k] = null}
+   send m[i],i to Q;   repeat {store}
+   i := i+1;    receive m[i],i from P;
+forever      store m[i] into buffer[i];
+        {deliver}
+        while buffer[k] ≠ null do
+        begin
+        deliver the content of 
+        buffer k];
+         buffer [k] := null; k := k+1;
+        end
+        forever
+
+공유 메모리를 사용하여 메시지 전달 구현
+
+![image](https://github.com/user-attachments/assets/67e18282-fd27-4445-8213-08f9a1e21712)
 
 
+s [ i ]는 송신자가 보낸 i 번째 메시지를 나타내고 r [ j ]는 수신자가 받은 j 번째 메시지를 나타냅니다. 구현은 다음과 같습니다. 채널이 가득 차면 송신자가 차단되고 채널이 비어 있으면 수신자가 차단됩니다.
 
-
-
-
-
-
-
-
-
-
-
+shared var p, q: integer {initially p = q}
+buffer: array [0..max-1] of message
+{Sender process P}
+var s: array of messages sent by P, i : integer {initially 0}
+repeat
+ if p ≠ q − 1 mod max then
+ begin
+    buffer[p] := s[i]; i := i + 1; p := p + 1 mod max
+ end
+forever
+{Receiver process Q}
+var r: array of messages received by Q, j : integer {initially 0}
+repeat
+ if q ≠ p mod max then
+ begin
+    r[j] := buffer[q]; j := j + 1; q := q + 1 mod max
+ end
+forever
 
 
 
