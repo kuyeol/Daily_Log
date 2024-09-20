@@ -44,22 +44,59 @@ CREATE  TABLE posts (
 
 CREATE  TABLE feeds ( 
   feed_owner_id UUID, 
-  post_id UUID, 
-  user_id UUID, 
-  content TEXT, 
-  timestamp  TIMESTAMP , 
-  PRIMARY KEY (feed_owner_id, timestamp , post_id) 
-) WITH CLUSTERING ORDER  BY ( timestamp  DESC ); 
+  post_제
+```sql
+CREATE KEYSPACE reservation
+    WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
 
-CREATE  TABLE connections ( 
-  user_id UUID, 
-  connected_user_id UUID, 
-  connection_type TEXT, 
-  timestamp  TIMESTAMP , 
-  PRIMARY KEY (user_id, connected_user_id) 
+CREATE TYPE reservation.address (
+    street text, city text,
+    state_or_province text,
+    postal_code text,
+    country text
 );
-```
 
+CREATE TABLE reservation.reservations_by_confirmation (
+    confirm_number text,
+    hotel_id text,
+    start_date date,
+    end_date date,
+    room_number smallint,
+    guest_id uuid,
+    PRIMARY KEY (confirm_number)
+) WITH comment = 'Q6. Find reservations by confirmation number';
+
+CREATE TABLE reservation.reservations_by_hotel_date (
+    hotel_id text,
+    start_date date,
+    room_number smallint,
+    end_date date,
+    confirm_number text,
+    guest_id uuid,
+    PRIMARY KEY ((hotel_id, start_date), room_number)
+) WITH comment = 'Q7. Find reservations by hotel and date';
+
+CREATE TABLE reservation.reservations_by_guest (
+    guest_last_name text,
+    guest_id uuid,
+    confirm_number text,
+    hotel_id text,
+    start_date date,
+    end_date date,
+    room_number smallint,
+    PRIMARY KEY ((guest_last_name), guest_id, confirm_number)
+) WITH comment = 'Q8. Find reservations by guest name';
+
+CREATE TABLE reservation.guests (
+    guest_id uuid PRIMARY KEY,
+    first_name text,
+    last_name text,
+    title text,
+    emails set<text>,
+    phone_numbers list<text>,
+    addresses map<text, frozen<address>>
+) WITH comment = 'Q9. Find guest by ID';
+```
 1. 개별 테이블에 저장 로직 생성
 
 
