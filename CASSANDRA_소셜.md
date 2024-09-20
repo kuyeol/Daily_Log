@@ -6,9 +6,21 @@
 - 구독중인 유저에 레코드 수집 + 한번에 가져오는 데이터 제한
 
 
+## ConcurrentHashMap을 사용하여 데이터 탐색
 
-
-
+- 캐시나 빈번한 읽기/쓰기 작업
+```JAVA
+ConcurrentHashMap<String, String> cache = new ConcurrentHashMap<>();
+cache.put("userId123", "userData");
+String userData = cache.get("userId123");}
+```
+ConcurrentLinkedQueue를 사용하여 이벤트 처리
+ - FIFO 이벤트 처리 
+```JAVA
+ConcurrentLinkedQueue<String> eventQueue = new ConcurrentLinkedQueue<>();
+eventQueue.offer("신규 사용자 가입 이벤트");
+String event = eventQueue.poll();
+```
 
 
 
