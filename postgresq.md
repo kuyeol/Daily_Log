@@ -96,6 +96,22 @@ public class City {
 }
 ```
 
+```
+public static Uni<Void> insertCountry(PgPool client, String countryCode, String countryName) {
+    return client
+        .preparedQuery("INSERT INTO countries (country_code, country_name) VALUES ($1, $2)")
+        .execute(Tuple.of(countryCode, countryName))
+        .replaceWithVoid();
+}
 
+```
 
-    
+    ```
+    public static Uni<Void> insertCity(PgPool client, String name, String postalCode, String countryCode) {
+    return client
+        .preparedQuery("INSERT INTO cities (name, postal_code, country_code) VALUES ($1, $2, $3)")
+        .execute(Tuple.of(name, postalCode, countryCode))
+        .replaceWithVoid();
+}
+
+    ```
