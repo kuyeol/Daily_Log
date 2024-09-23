@@ -1,3 +1,15 @@
+
+# 0923
+
+## 반응형 프로그래밍의 적용 사례
+-  마우스 움직임 및 클릭, 키보드 입력, 사용자가 기기를 움직일 때 시간에 따라 변화하는 GPS 신호, 기기 자이로스코프 신호, 터치 이벤트 등과 같은 사용자 이벤트를 처리합니다.
+
+- IO는 본질적으로 비동기적(요청이 이루어지고 시간이 지나면서 응답을 받을 수도 받지 못할 수도 있어 추가 작업이 시작됨)이므로 디스크나 네트워크에서 발생하는 모든 지연 시간 바인딩된 IO 이벤트에 응답하고 처리합니다.
+
+- 제작자가 제어할 수 없는 애플리케이션에 푸시된 이벤트나 데이터를 처리합니다(서버에서 발생하는 시스템 이벤트, 앞서 언급한 사용자 이벤트, 하드웨어에서 발생하는 신호, 센서에서 발생하는 아날로그 세계에서 발생하는 이벤트 등).
+
+
+
 # **Advanced Algorithms and Data Structures**
 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/mlarocca/AlgorithmsAndDataStructuresInAction.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/mlarocca/AlgorithmsAndDataStructuresInAction/alerts/)
