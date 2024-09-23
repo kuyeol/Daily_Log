@@ -28,7 +28,7 @@
        - this.secretData = jsonStr;
 
     
-   ```
+   ```JAVA
 private Map<String, Object> readMapFromJson(boolean secret) {
         String jsonStr = secret ? secretData : credentialData;
         if (jsonStr == null) {
@@ -57,6 +57,30 @@ private Map<String, Object> readMapFromJson(boolean secret) {
 
   ```
 
+
+
+```JAVA
+    CredentialModel toModel(CredentialEntity entity) {
+        CredentialModel model = new CredentialModel();
+        model.setId(entity.getId());
+        model.setType(entity.getType());
+        model.setCreatedDate(entity.getCreatedDate());
+        model.setUserLabel(entity.getUserLabel());
+
+        // Backwards compatibility - users from previous version still have "salt" in the DB filled.
+        // We migrate it to new secretData format on-the-fly
+        if (entity.getSalt() != null) {
+            String newSecretData = entity.getSecretData().replace("__SALT__", Base64.encodeBytes(entity.getSalt()));
+            entity.setSecretData(newSecretData);
+            entity.setSalt(null);
+        }
+
+        model.setSecretData(entity.getSecretData());
+        model.setCredentialData(entity.getCredentialData());
+        return model;
+    }
+```
+
 ---
 
 ### GPT EXPLAIN
@@ -64,7 +88,7 @@ private Map<String, Object> readMapFromJson(boolean secret) {
 이 코드의 목적은 JSON 문자열을 Map<String, Object> 형식의 Java 객체로 변환하거나, Java 객체를 JSON 문자열로 변환하는 기능을 제공하는 것입니다. 이를 통해 secretData와 credentialData라는 두 가지 데이터 소스의 JSON 데이터를 처리할 수 있습니다.
 
 코드는 두 개의 메서드로 구성되어 있습니다:
-```
+```JAVA
 readMapFromJson(boolean secret)
 ```
 > 이 메서드는 JSON 문자열을 읽고 이를 Map<String, Object> 형식으로 변환합니다.
@@ -76,7 +100,7 @@ secret 값에 따라 jsonStr 변수가 secretData 또는 credentialData 값을 �
 그렇지 않으면, JsonSerialization.readValue()를 사용하여 JSON 문자열을 Map<String, Object>로 변환합니다.
 JSON 변환 중 문제가 발생하면 IOException을 캐치하고, 이를 RuntimeException으로 래핑해 던집니다.
 
-```
+```JAVA
 writeMapAsJson(Map<String, Object> map, boolean secret)
 ```
 > 이 메서드는 Map<String, Object>를 JSON 문자열로 변환하여 저장합니다.
