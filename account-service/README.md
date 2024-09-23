@@ -57,8 +57,9 @@ private Map<String, Object> readMapFromJson(boolean secret) {
 
   ```
 
-
-
+ # JpaUserCredentialStore
+- 암호화 ㅓ로직 생성 메서드
+- 크레덴셜 엔터티에 포함된 알고리즘 적용 메서드 호출
 ```JAVA
     CredentialModel toModel(CredentialEntity entity) {
         CredentialModel model = new CredentialModel();
