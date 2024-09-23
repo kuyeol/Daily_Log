@@ -8,4 +8,7 @@
   - 쿼리를 정의 후 메서드 네임을 붙여 메서드를 사용한다    
 
 2. 모델
+- 해당 엔터티 인터페이스 정의
+
+3. JpaUserProvider , JpaUserCredentialStore
 - 
