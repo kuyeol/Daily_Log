@@ -1,7 +1,8 @@
 
 # 유저 생성 및 인증 JPA with Postgres
 
-[CredentialEntity](CredentialEntity.java)
+- [`CredentialEntity`](CredentialEntity.java)  
+- [`CredentialEntity`](CredentialEntity.java)
 
 1. 엔터티
 - @NamedQueries `(` `{` @NamedQuery`(name="credentialByUser", query="select cred from CredentialEntity cred where cred.user = :user order by cred.priority")`  `}` `)`
