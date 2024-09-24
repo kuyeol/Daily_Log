@@ -12,11 +12,13 @@ This code demonstrates user registration and login functionalities using Keycloa
 **1. User Registration:**
 
 ```java
-
-   @POST
-    @Consumes(MediaType.APPLICATION_JSON)
     @Tag(name = KeycloakOpenAPI.Admin.Tags.USERS)
     @Operation( summary = "Create a new user Username must be unique.")
+
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+
     public Response createUser(final UserRepresentation rep) {
         // first check if user has manage rights
         try {
@@ -75,8 +77,36 @@ This code demonstrates user registration and login functionalities using Keycloa
 
 
 ```shell
-2024-09-24 06:30:09,744 WARN  [org.keycloak.events] (executor-thread-13) type="REGISTER_ERROR", realmId="a7140fda-f375-419e-98a9-ae08cbe63999", clientId="security-admin-console", userId="null", ipAddress="172.24.0.1", error="invalid_registration", auth_method="openid-connect", auth_type="code", register_method="form", last_name="djdjdj", redirect_uri="http://182.218.135.229:7777/admin/master/console/", first_name="dkdkd", code_id="d98fb713-48f8-4938-b310-d36715572e70", email="sksk@sksk.com", username="dddds"
-2024-09-24T06:35:44.717749025Z 2024-09-24 06:35:44,717 WARN  [org.keycloak.events] (executor-thread-27) type="LOGIN_ERROR", realmId="a7140fda-f375-419e-98a9-ae08cbe63999", clientId="security-admin-console", userId="null", ipAddress="172.24.0.1", error="user_not_found", auth_method="openid-connect", auth_type="code", redirect_uri="http://182.218.135.229:7777/admin/master/console/", code_id="303f4f2d-ccf8-49cd-b96c-a63290a3ef68", username="ungyeol"
+2024-09-24 06:30:09,744 WARN  [org.keycloak.events] (executor-thread-13) 
+type="REGISTER_ERROR", 
+realmId="a7140fda-f375-419e-98a9-ae08cbe63999", 
+clientId="security-admin-console", 
+userId="null", ipAddress="172.24.0.1",
+error="invalid_registration", 
+auth_method="openid-connect", 
+auth_type="code",
+register_method="form", 
+last_name="djdjdj", 
+redirect_uri="http://182.218.135.229:7777/admin/master/console/", 
+first_name="dkdkd",
+code_id="d98fb713-48f8-4938-b310-d36715572e70", 
+email="sksk@sksk.com", 
+username="dddds"
+
+
+2024-09-24T06:35:44.717749025Z 2024-09-24 06:35:44,717 WARN  [org.keycloak.events] (executor-thread-27) 
+type="LOGIN_ERROR", 
+realmId="a7140fda-f375-419e-98a9-ae08cbe63999", 
+clientId="security-admin-console",
+userId="null", 
+ipAddress="172.24.0.1", 
+error="user_not_found", 
+auth_method="openid-connect", 
+auth_type="code", 
+redirect_uri="http://182.218.135.229:7777/admin/master/console/", 
+code_id="303f4f2d-ccf8-49cd-b96c-a63290a3ef68", 
+username="ungyeol"
+
 2024-09-24T06:53:41.593337519Z 2024-09-24 06:53:41,592 WARN  [org.keycloak.authentication.DefaultAuthenticationFlow] (executor-thread-71) REQUIRED and ALTERNATIVE elements at same level! Those alternative executions will be ignored: [auth-cookie, identity-provider-redirector]
 
 ```
