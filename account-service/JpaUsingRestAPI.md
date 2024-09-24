@@ -5,10 +5,90 @@
 
 ## User Registration and Login Code (Keycloak Integration)
 
+
+
 This code demonstrates user registration and login functionalities using Keycloak as the Identity and Access Management (IAM) solution. 
 
 **1. User Registration:**
 
+```java
+
+   @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Tag(name = KeycloakOpenAPI.Admin.Tags.USERS)
+    @Operation( summary = "Create a new user Username must be unique.")
+    public Response createUser(final UserRepresentation rep) {
+        // first check if user has manage rights
+        try {
+            auth.users().requireManage();
+        } catch (ForbiddenException exception) {
+            if (!canCreateGroupMembers(rep)) {
+                throw exception;
+            }
+        }
+
+        String username = rep.getUsername();
+        if(realm.isRegistrationEmailAsUsername()) {
+            username = rep.getEmail();
+        }
+
+        UserProfileProvider profileProvider = session.getProvider(UserProfileProvider.class);
+
+        UserProfile profile = profileProvider.create(USER_API, rep.getRawAttributes());
+
+        try {
+            Response response = UserResource.validateUserProfile(profile, session, auth.adminAuth());
+            if (response != null) {
+                return response;
+            }
+
+            UserModel user = profile.create();
+
+            UserResource.updateUserFromRep(profile, user, rep, session, false);
+            RepresentationToModel.createFederatedIdentities(rep, session, realm, user);
+            RepresentationToModel.createGroups(session, rep, realm, user);
+
+            RepresentationToModel.createCredentials(rep, session, realm, user, true);
+            adminEvent.operation(OperationType.CREATE).resourcePath(session.getContext().getUri(), user.getId()).representation(rep).success();
+
+            return Response.created(session.getContext().getUri().getAbsolutePathBuilder().path(user.getId()).build()).build();
+        } catch (ModelDuplicateException e) {
+            throw ErrorResponse.exists("User exists with same username or email");
+        } catch (PasswordPolicyNotMetException e) {
+            logger.warn("Password policy not met for user " + e.getUsername(), e);
+            Properties messages = AdminRoot.getMessages(session, realm, auth.adminAuth().getToken().getLocale());
+            throw new ErrorResponseException(e.getMessage(), MessageFormat.format(messages.getProperty(e.getMessage(), e.getMessage()), e.getParameters()),
+                    Response.Status.BAD_REQUEST);
+        } catch (ModelIllegalStateException e) {
+            logger.error(e.getMessage(), e);
+            throw ErrorResponse.error(e.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
+        } catch (ModelException me){
+            logger.warn("Could not create user", me);
+            throw ErrorResponse.error("Could not create user", Response.Status.BAD_REQUEST);
+        }
+    }
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------
 ```java
 @Path("/users")
 @RequestScoped
