@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/11hello/11hello.iml" filepath="$PROJECT_DIR$/11hello/11hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12types/12types.iml" filepath="$PROJECT_DIR$/12types/12types.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13flow/13flow.iml" filepath="$PROJECT_DIR$/13flow/13flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/14array/14array.iml" filepath="$PROJECT_DIR$/14array/14array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15inout/15inout.iml" filepath="$PROJECT_DIR$/15inout/15inout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/16pagerank/16pagerank.iml" filepath="$PROJECT_DIR$/16pagerank/16pagerank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/21function/21function.iml" filepath="$PROJECT_DIR$/21function/21function.iml" />
+      <module fileurl="file://$PROJECT_DIR$/22library/22library.iml" filepath="$PROJECT_DIR$/22library/22library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/23recursion/23recursion.iml" filepath="$PROJECT_DIR$/23recursion/23recursion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/24percolation/24percolation.iml" filepath="$PROJECT_DIR$/24percolation/24percolation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/31datatype/31datatype.iml" filepath="$PROJECT_DIR$/31datatype/31datatype.iml" />
+      <module fileurl="file://$PROJECT_DIR$/32class/32class.iml" filepath="$PROJECT_DIR$/32class/32class.iml" />
+      <module fileurl="file://$PROJECT_DIR$/33design/33design.iml" filepath="$PROJECT_DIR$/33design/33design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/34nbody/34nbody.iml" filepath="$PROJECT_DIR$/34nbody/34nbody.iml" />
+      <module fileurl="file://$PROJECT_DIR$/41analysis/41analysis.iml" filepath="$PROJECT_DIR$/41analysis/41analysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/42sort/42sort.iml" filepath="$PROJECT_DIR$/42sort/42sort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/43stack/43stack.iml" filepath="$PROJECT_DIR$/43stack/43stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/44st/44st.iml" filepath="$PROJECT_DIR$/44st/44st.iml" />
+      <module fileurl="file://$PROJECT_DIR$/45graph/45graph.iml" filepath="$PROJECT_DIR$/45graph/45graph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntroCS.iml" filepath="$PROJECT_DIR$/IntroCS.iml" />
+    </modules>
+  </component>
+</project>
