@@ -1,4 +1,64 @@
 
+# 리소스에서 사용자 등록 요청 
+
+- A. 반환 값은 Response 인스턴스에 created(유저.겟아이디 ) 메서드를 호출해 생성
+
+- B. 유저명을 문자열객체로 생성해 파라미터.get유저명으로 할당
+- C. 유저프로필프로바이더 객체생성 = 세션 객체 메서드 겟프로바이더 호출해 (유저프로파일프로바이더) 전달 할당
+- D. 유저프로필 객체 생성 =  프로파일프로바이더 객체 메서드 크리에이트 호출해 파라미터로 (유저API ,유저리프리젠테이션.겟로우어트리뷰트) 전달
+  - 유저명,이메일,퍼스트,라스트 네임 정보를 담는다
+```java
+   @JsonDeserialize(using = StringListMapDeserializer.class)
+    protected Map<String, List<String>> attributes;
+
+   public void setAttributes(Map<String, List<String>> attributes) {
+        this.attributes = attributes;
+    }
+   
+  public Map<String, List<String>> getAttributes() {
+        return attributes;
+    }
+```
+
+```JAVA
+public Map<String, List<String>> getRawAttributes()
+{
+    // 프로필 속성 겍체 초기화
+     Map<String, List<String>> attrs = new HashMap<>(Optional.ofNullable(attributes).orElse(new HashMap<>()));
+
+       if (username != null)
+            attrs.put(USERNAME, Collections.singletonList(getUsername()));
+        else
+            attrs.remove(USERNAME);
+
+        if (email != null)
+            attrs.put(EMAIL, Collections.singletonList(getEmail()));
+        else
+            attrs.remove(EMAIL);
+
+        if (lastName != null)
+            attrs.put(LAST_NAME, Collections.singletonList(getLastName()));
+
+        if (firstName != null)
+            attrs.put(FIRST_NAME, Collections.singletonList(getFirstName()));
+
+        return attrs;
+
+}
+```
+
+- E. 프로필 검증 메서드 호출해 유효성 검사 검증 메서드는 문제가 없다면 널을 반환하고 유효성검사 메서드 분기에서 널이 아니라면 리스폰을 반환하여 재시도 URI 생성
+- F. 유저모델 객체를 생성 = 프로필.크리에이트 메서드 할당
+- G. 스테틱메서드 RepresentationToModel.createCredentials(rep, session, realm, user, true); 호출하여 유저 생성
+  - 파라미터 ( 유저리프리젠테이션 객체, 세션 객체 렐를 객체 , 유저모델 객체, true )
+  - 
+- ___return___ 리스폰 객체에 유저아이디를 추가해 uri 생성 반환
+
+정리 :
+
+
+
+
 # 유저 생성 및 인증 JPA with Postgres
 
 - [`CredentialEntity`](CredentialEntity.java)  
