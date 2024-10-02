@@ -1,47 +1,43 @@
-
-
-# 키클록 소스경로 참고 gpt
- <details>
- <summary> 
-   인증 서버와 자격 저장 서버
-</summary>
-  # Keycloak 인증 서버 및 자격 증명 서버 관련 소스 코드 경로
-
-Keycloak은 오픈 소스 인증 및 권한 부여 서버로, 인증 서버와 자격 증명 서버의 기능을 제공합니다. 아래는 각 기능을 담당하는 주요 소스 코드 경로입니다.
+# Keycloak 인증 서버 및 자격 증명 서버 관련 소스 코드 경로
+- 인증 서버와 자격 저장 서버
+  
+> [!note]
+> Keycloak은 오픈 소스 인증 및 권한 부여 서버로, 인증 서버와 자격 증명 서버의 기능을 제공합니다. 아래는 각 기능을 담당하는 주요 소스 코드 경로입니다.
 
 ## 1. 인증 및 권한 부여 서버 (Authentication and Authorization Server)
 Keycloak에서 OAuth2, OpenID Connect, JWT 발급, 권한 부여 등의 기능을 처리하는 경로입니다.
 
 ### 주요 경로
 - **OAuth2/OpenID Connect 구현**
-  - **경로**: `services/src/main/java/org/keycloak/protocol/oidc`
+  - **경로**: [`services/src/main/java/org/keycloak/protocol/oidc`](https://github.com/keycloak/keycloak/blob/main/services/src/main/java/org/keycloak/protocol/oidc)
+  - 
     - 주요 클래스:
-      - `TokenEndpoint.java`: 액세스 토큰 발급.
-      - `AuthorizationEndpoint.java`: 권한 부여 요청 처리.
+      - [`TokenEndpoint.java`](https://github.com/keycloak/keycloak/blob/main/services/src/main/java/org/keycloak/protocol/oidc/endpoints/TokenEndpoint.java): 액세스 토큰 발급.
+      - [`AuthorizationEndpoint.java`](https://github.com/keycloak/keycloak/blob/main/services/src/main/java/org/keycloak/protocol/oidc/endpoints/AuthorizationEndpoint.java): 권한 부여 요청 처리.
 
 - **JWT 생성 및 서명**
-  - **경로**: `core/src/main/java/org/keycloak/jose/jws`
+  - **경로**: [`core/src/main/java/org/keycloak`](https://github.com/keycloak/keycloak/tree/main/core/src/main/java/org/keycloak)
     - 주요 클래스:
-      - `JWSBuilder.java`: JWT 생성 및 서명.
-      - `JWSTokenVerifier.java`: JWT 검증.
-
+      - [`JWSBuilder.java`](https://github.com/keycloak/keycloak/blob/main/core/src/main/java/org/keycloak/jose/jws/JWSBuilder.java): JWT 생성 및 서명.
+      - [`TokenVerifier.java`](https://github.com/keycloak/keycloak/blob/main/core/src/main/java/org/keycloak/TokenVerifier.java): JWT 검증.
+        
 - **권한 부여 처리 (Authorization)**
-  - **경로**: `services/src/main/java/org/keycloak/authorization`
+  - **경로**: [`server-spi-private/src/main/java/org/keycloak/authorization`](https://github.com/keycloak/keycloak/tree/main/services/src/main/java/org/keycloak/authorization)
     - 주요 클래스:
-      - `AuthorizationProvider.java`: 권한 부여 처리.
-      - `PolicyEvaluator.java`: 정책 기반 권한 부여.
+      - [`AuthorizationProvider.java`](https://github.com/keycloak/keycloak/blob/main/server-spi-private/src/main/java/org/keycloak/authorization/AuthorizationProvider.java): 권한 부여 처리.
+      - [`PolicyEvaluator.java`](https://github.com/keycloak/keycloak/blob/main/server-spi-private/src/main/java/org/keycloak/authorization/policy/evaluation/PolicyEvaluator.java): 정책 기반 권한 부여.
 
 - **세션 관리**
-  - **경로**: `core/src/main/java/org/keycloak/models`
+  - **경로**: [`server-spi/src/main/java/org/keycloak/models`](https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/models)
     - 주요 클래스:
-      - `UserSessionModel.java`: 사용자 세션 정의.
-      - `UserSessionProvider.java`: 세션 관리.
+      - [`UserSessionModel.java`](https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/models/UserSessionModel.java): 사용자 세션 정의.
+      - [`UserSessionProvider.java`](https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/models/UserSessionProvider.java): 세션 관리.
 
 - **API 보안 및 CORS 정책**
-  - **경로**: `services/src/main/java/org/keycloak/services/filters`
+  - **경로**: [`services/src/main/java/org/keycloak/services/filters`]()
     - 주요 클래스:
-      - `CorsFilter.java`: CORS 정책 적용.
-      - `KeycloakSecurityHeadersFilter.java`: 보안 헤더 필터.
+      - [`DefaultCors.java`](https://github.com/keycloak/keycloak/tree/main/services/src/main/java/org/keycloak/services/cors): CORS 정책 적용.
+      - [`KeycloakSecurityHeadersFilter.java`](https://github.com/keycloak/keycloak/blob/main/services/src/main/java/org/keycloak/services/filters/KeycloakSecurityHeadersFilter.java): 보안 헤더 필터.
 
 ---
 
@@ -50,28 +46,28 @@ Keycloak에서 사용자 자격 증명(비밀번호 등)을 저장하고 관리�
 
 ### 주요 경로
 - **비밀번호 저장 및 검증**
-  - **경로**: `core/src/main/java/org/keycloak/credential`
+  - **경로**: [`server-spi/src/main/java/org/keycloak/credential`](https://github.com/keycloak/keycloak/tree/main/server-spi/src/main/java/org/keycloak/credential)
     - 주요 클래스:
-      - `PasswordCredentialProvider.java`: 비밀번호 처리.
-      - `CredentialInputUpdater.java`: 자격 증명 업데이트.
+      - [`PasswordCredentialProvider.java`](https://github.com/keycloak/keycloak/blob/main/services/src/main/java/org/keycloak/credential/PasswordCredentialProvider.java): 비밀번호 처리.
+      - [`CredentialInputUpdater.java`](https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/credential/CredentialInputUpdater.java): 자격 증명 업데이트.
 
 - **사용자 계정 관리**
-  - **경로**: `services/src/main/java/org/keycloak/services/resources/account`
+  - **경로**:[ `services/src/main/java/org/keycloak/services/resources/account`](https://github.com/keycloak/keycloak/tree/main/services/src/main/java/org/keycloak/services/resources/account)
     - 주요 클래스:
-      - `AccountRestService.java`: 사용자 계정 관련 API.
-      - `AccountCredentialResource.java`: 자격 증명 요청 처리.
+      - [`AccountRestService.java`](https://github.com/keycloak/keycloak/blob/main/services/src/main/java/org/keycloak/services/resources/account/AccountRestService.java): 사용자 계정 관련 API.
+      - [`AccountCredentialResource.java`](https://github.com/keycloak/keycloak/blob/main/services/src/main/java/org/keycloak/services/resources/account/AccountCredentialResource.java): 자격 증명 요청 처리.
 
 - **자격 증명 암호화**
-  - **경로**: `core/src/main/java/org/keycloak/hash`
+  - **경로**: [`crypto/default/src/main/java/org/keycloak/crypto/hash`](https://github.com/keycloak/keycloak/tree/main/crypto/default/src/main/java/org/keycloak/crypto/hash)
     - 주요 클래스:
-      - `PasswordHashProvider.java`: 비밀번호 해싱.
-      - `BCryptPasswordHashProvider.java`: BCrypt 해시 구현.
+      - [`PasswordHashProvider.java`](https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/credential/hash/PasswordHashProvider.java#L28): 비밀번호 해싱.
+      - [`Argon2PasswordHashProvider.java`](https://github.com/keycloak/keycloak/blob/main/crypto/default/src/main/java/org/keycloak/crypto/hash/Argon2PasswordHashProvider.java): Argon2 해시 구현.
 
 - **토큰 저장 및 관리**
-  - **경로**: `core/src/main/java/org/keycloak/models`
+  - **경로**: [`server-spi/src/main/java/org/keycloak/models/ClientModel.java`](https://github.com/keycloak/keycloak/tree/main/server-spi/src/main/java/org/keycloak/models)
     - 주요 클래스:
-      - `RealmModel.java`: Realm에서 토큰 설정 관리.
-      - `ClientModel.java`: 클라이언트 토큰 설정 관리.
+      - [`RealmModel.java`](https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/models/RealmModel.java): Realm에서 토큰 설정 관리.
+      - [`ClientModel.java`](https://github.com/keycloak/keycloak/blob/main/server-spi/src/main/java/org/keycloak/models/ClientModel.java): 클라이언트 토큰 설정 관리.
 
 ---
 
@@ -83,27 +79,28 @@ Keycloak에서 보안 강화를 위한 암호화 및 로그 기록 관련 소스
   - Keycloak은 주로 외부 Reverse Proxy(Nginx, Apache) 서버를 통해 SSL 설정.
 
 - **감사 및 모니터링**
-  - **경로**: `services/src/main/java/org/keycloak/events`
+  - **경로**: [`services/src/main/java/org/keycloak/events`]()
     - 주요 클래스:
-      - `EventListenerProvider.java`: 인증 이벤트 기록.
-      - `EventStoreProvider.java`: 이벤트 저장소 관리.
+      - [`EventListenerProvider.java`](): 인증 이벤트 기록.
+      - [`EventStoreProvider.java`](): 이벤트 저장소 관리.
 
 - **정책 기반 접근 제어**
-  - **경로**: `services/src/main/java/org/keycloak/authorization/policy`
+  - **경로**: [`services/src/main/java/org/keycloak/authorization/policy`]()
     - 주요 클래스:
-      - `PolicyProvider.java`: 정책 평가 인터페이스.
-      - `DefaultPolicyEvaluator.java`: 정책 평가 및 결과 반환.
+      - [`PolicyProvider.java`](): 정책 평가 인터페이스.
+      - [`DefaultPolicyEvaluator.java`](): 정책 평가 및 결과 반환.
 
 ---
 
 ### 결론
 Keycloak의 인증 서버와 자격 증명 서버는 각각 **인증/권한 부여 처리**, **자격 증명 저장/검증**, **보안 관리**로 나뉘어 있으며, 관련 기능은 각 패키지 안에 구현되어 있습니다.
-</details>
+
 
 
 
 
 ---
+
 # 리소스에서 사용자 등록 요청 
 
 - A. 반환 값은 Response 인스턴스에 created(유저.겟아이디 ) 메서드를 호출해 생성
