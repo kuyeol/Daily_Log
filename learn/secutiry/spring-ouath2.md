@@ -6,6 +6,18 @@
 - Spring Security 기반 구현
 - Spring Authorization Server는 OAuth 2.1 및 OpenID Connect 1.0 사양과 기타 관련 사양 의 구현을 제공
 
+## Prerequisites
+
+- JDK17
+- Gradle
+- Plugin
+  - `org.springframework.boot' version '3.3.4'`
+- Dependencies 
+  - `org.springframework.boot:spring-boot-starter-security`
+  - `org.springframework.boot:spring-boot-starter-web`
+  - `org.springframework.boot:spring-boot-starter-oauth2-authorization-server`
+
+
 ## 지원 기능
 
 - 권한 부여 흐름[link](#)
@@ -45,117 +57,22 @@
 
 
 
-# Prerequisites
-
-- JDK17
-- Gradle
-- Plugin
-  - `org.springframework.boot' version '3.3.4'`
-- Dependencies 
-  - `org.springframework.boot:spring-boot-starter-security`
-  - `org.springframework.boot:spring-boot-starter-web`
-  - `org.springframework.boot:spring-boot-starter-oauth2-authorization-server`
-
-
 Contents
 ---
-1. [YML 구성으로 간단한 구현](#간단한-구성으로-시작하기)
-
-
-## Section 1
-
-이곳은 첫 번째 섹션입니다.
-
-## Section 2: Example
-
-이곳은 두 번째 섹션입니다.
-
-```yml
-spring:
-  security:
-    user:
-      name: user
-      password: password
-    oauth2:
-      authorizationserver:
-        client:
-          oidc-client:
-            registration:
-              client-id: "oidc-client"
-              client-secret: "{noop}secret"
-              client-authentication-methods:
-                - "client_secret_basic"
-              authorization-grant-types:
-                - "authorization_code"
-                - "refresh_token"
-              redirect-uris:
-                - "http://127.0.0.1:8080/login/oauth2/code/oidc-client"
-              post-logout-redirect-uris:
-                - "http://127.0.0.1:8080/"
-              scopes:
-                - "openid"
-                - "profile"
-            require-authorization-consent: true
-```
-```yml
-spring:
-  security:
-    user:
-      name: user
-      password: password
-    oauth2:
-      authorizationserver:
-        client:
-          oidc-client:
-            registration:
-              client-id: "oidc-client"
-              client-secret: "{noop}secret"
-              client-authentication-methods:
-                - "client_secret_basic"
-              authorization-grant-types:
-                - "authorization_code"
-                - "refresh_token"
-              redirect-uris:
-                - "http://127.0.0.1:8080/login/oauth2/code/oidc-client"
-              post-logout-redirect-uris:
-                - "http://127.0.0.1:8080/"
-              scopes:
-                - "openid"
-                - "profile"
-            require-authorization-consent: true
-```
-```yml
-spring:
-  security:
-    user:
-      name: user
-      password: password
-    oauth2:
-      authorizationserver:
-        client:
-          oidc-client:
-            registration:
-              client-id: "oidc-client"
-              client-secret: "{noop}secret"
-              client-authentication-methods:
-                - "client_secret_basic"
-              authorization-grant-types:
-                - "authorization_code"
-                - "refresh_token"
-              redirect-uris:
-                - "http://127.0.0.1:8080/login/oauth2/code/oidc-client"
-              post-logout-redirect-uris:
-                - "http://127.0.0.1:8080/"
-              scopes:
-                - "openid"
-                - "profile"
-            require-authorization-consent: true
-```
+- [[1]](#간단한-구성으로-시작하기) YML 제공하여 간단한 구현
+- [[2]](#사용자-정의-기능-구현) 인증 서버의 구성을 구현해 개발
 
 ## 간단한 구성으로 시작하기
 
-- yml 정의로 간단한 구현 방식
+- Spring Boot가 필요한 @Bean정의를 YML로 작성하여 제공한다 
 ```yml
+server:
+  port: 9000
+
+logging:
+  level:
+    org.springframework.security: trace
+
 spring:
   security:
     user:
@@ -182,5 +99,94 @@ spring:
                 - "profile"
             require-authorization-consent: true
 ```
+
+## 사용자 정의 기능 구현
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
