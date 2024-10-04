@@ -134,10 +134,43 @@ spring:
 ## 세부 분휴
 
 ### Configuration_Model
-### Core_Model
-### Component
-### Protocol_EndPoint
+- Configuration Model
+- Default configuration
+- Customizing the configuration
+- Configuring Authorization Server Settings
+- Configuring Client Authentication
+  - Customizing Jwt Client Assertion Validation
+  - Customizing Mutual-TLS Client Authentication
 
+### Core_Model / Component
+
+- RegisteredClient
+- RegisteredClientRepository
+- OAuth2Authorization
+- OAuth2AuthorizationService
+- OAuth2AuthorizationConsent
+- OAuth2AuthorizationConsentService
+- OAuth2TokenContext
+- OAuth2TokenGenerator
+- OAuth2TokenCustomizer
+- SessionRegistry
+
+### Protocol_EndPoints
+
+- OAuth2 Authorization Endpoint
+  - Customizing Authorization Request Validation
+- OAuth2 Device Authorization Endpoint
+- OAuth2 Device Verification Endpoint
+- OAuth2 Token Endpoint
+  - Customizing Client Credentials Grant Request Validation
+- OAuth2 Token Introspection Endpoint
+- OAuth2 Token Revocation Endpoint
+- OAuth2 Authorization Server Metadata Endpoint
+- JWK Set Endpoint
+- OpenID Connect 1.0 Provider Configuration Endpoint
+- OpenID Connect 1.0 Logout Endpoint
+- OpenID Connect 1.0 UserInfo Endpoint
+- OpenID Connect 1.0 Client Registration Endpoint
 
 
 
