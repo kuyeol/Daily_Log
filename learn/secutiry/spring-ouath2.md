@@ -112,10 +112,14 @@ spring:
     - null
   - methods
     - @Nullable @Override public Authentication convert(HttpServletRequest request)
-    - private static MultiValueMap<String, String> getParameters(HttpServletRequest request)               
+    - private static MultiValueMap<String, String> getParameters(HttpServletRequest request)
+                     
 2. AuthenticationProvider
+- 인증 제공자
+- 권한 부여의 유효성을 검사
+- 권한이 있는 경우 액세스 토큰을 발급
    - Create Class 
-     - `GrantType`_`AuthenticationProvider` implements AuthenticationProvider
+     - `GrantType``AuthenticationProvider` implements AuthenticationProvider
    - Instance Variable
      -  private final `OAuth2AuthorizationService` authorizationService;
      - private final `OAuth2TokenGenerator` < `?` extends `OAuth2Token` > tokenGenerator;
@@ -126,8 +130,8 @@ spring:
      - @Override public Authentication authenticate(Authentication authentication) throws AuthenticationException
      - @Override public boolean supports(Class<?> authentication)
 
-3. OAuth2 Token Endpoint
-```
+4. OAuth2 Token Endpoint
+```java
 import java.util.UUID;
 
 import com.nimbusds.jose.jwk.source.JWKSource;
