@@ -100,7 +100,9 @@ spring:
             require-authorization-consent: true
 ```
 
-## 사용자 정의 기능 구현
+# 사용자 정의 기능 구현
+
+## 기본 구성 내용
 
 ### 필수 구성 요소
 
@@ -126,11 +128,15 @@ spring:
   - JwtDecoder
 
 - Authorization Server 구성
-  - AuthorizationServerSettingsSpring 
+  - AuthorizationServerSettings
 
 
+## 세부 분휴
 
-
+### Configuration_Model
+### Core_Model
+### Component
+### Protocol_EndPoint
 
 
 
