@@ -109,8 +109,12 @@ spring:
    - Instance Variable
      -  private final OAuth2AuthorizationService authorizationService;
      - private final OAuth2TokenGenerator<? extends OAuth2Token> tokenGenerator;
+   - Constructor
+     - OAuth2AuthorizationService
+     - OAuth2TokenGenerator <? extends OAuth2Token>  
    - Methods
-     -        
+     - @Override public Authentication authenticate(Authentication authentication) throws AuthenticationException
+     - @Override public boolean supports(Class<?> authentication)       
 2. AuthenticationProvider
 
 3. OAuth2 Token Endpoint
