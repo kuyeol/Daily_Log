@@ -102,8 +102,31 @@ spring:
 
 ## 사용자 정의 기능 구현
 
+### 필수 구성 요소
 
+- 프로토콜 엔드포인트 호출
+  - SecurityFilterChain
 
+- 인증 필터 체인 
+   - SecurityFilterChain
+
+- 사용자 검색 인증 
+  - UserDetailsService
+
+- 클라이언트 관리 
+  - RegisteredClientRepository.
+
+- 액세스 토큰 서명
+  - com.nimbusds.jose.jwk.source.JWKSource.
+
+- JWKSource 액세스 토큰 서명 키 생성
+  - java.security.KeyPair
+
+- 서명된 액세스 토큰을 디코딩
+  - JwtDecoder
+
+- Authorization Server 구성
+  - AuthorizationServerSettingsSpring 
 
 
 
