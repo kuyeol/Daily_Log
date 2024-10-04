@@ -60,7 +60,7 @@
 Contents
 ---
 - [[1]](#간단한-구성으로-시작하기) YML 제공하여 간단한 구현
-- [[2]](#사용자-정의-기능-구현) 인증 서버의 구성을 구현해 개발
+- [2](#GrantType-Authorization-Server) _GrantType_ 인증 서버 구현
 
 ## 간단한 구성으로 시작하기
 
@@ -100,7 +100,16 @@ spring:
             require-authorization-consent: true
 ```
 
-# 사용자 정의 기능 구현
+# GrantType Authorization Server
+
+---
+1. AuthenticationConverter
+    - ddd
+2. AuthenticationProvider
+
+3. OAuth2 Token Endpoint
+
+4. Access Token
 
 ## 기본 구성 내용
 
