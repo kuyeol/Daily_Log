@@ -116,15 +116,15 @@ spring:
   - UserDetailsService
 
 - 클라이언트 관리 
-  - RegisteredClientRepository.
-
+  - RegisteredClientRepository
+  - 
+- JWKSource 서명에 사용 될 액세스 토큰 키쌍 생성
+  - java.security.KeyPair
+    
 - 액세스 토큰 서명
   - com.nimbusds.jose.jwk.source.JWKSource.
 
-- JWKSource 액세스 토큰 서명 키 생성
-  - java.security.KeyPair
-
-- 서명된 액세스 토큰을 디코딩
+- 서명된 액세스 토큰 디코딩
   - JwtDecoder
 
 - Authorization Server 구성
