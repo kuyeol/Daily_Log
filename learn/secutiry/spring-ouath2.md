@@ -59,10 +59,10 @@
 
 Contents
 ---
-- [[1]](#간단한-구성으로-시작하기) YML 제공하여 간단한 구현
-- [[2]](#GrantType-Authorization-Server) _GrantType_ 인증 서버 구현
+- [[1]](#1.-간단한-구성으로-시작하기) YML 제공하여 간단한 구현
+- [[2]](#2.-GrantType-Authorization-Server) _GrantType_ 인증 서버 구현
 
-## 간단한 구성으로 시작하기
+## 1. 간단한 구성으로 시작하기
 
 - Spring Boot가 필요한 @Bean정의를 YML로 작성하여 제공한다 
 ```yml
@@ -100,11 +100,11 @@ spring:
             require-authorization-consent: true
 ```
 
-# GrantType Authorization Server
+## 2. GrantType Authorization Server
 
 ---
 1. AuthenticationConverter
-    - ddd
+   - ddd
 2. AuthenticationProvider
 
 3. OAuth2 Token Endpoint
