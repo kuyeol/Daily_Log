@@ -8,9 +8,39 @@
 
 ## 지원 기능
 
-- 권한 부여[1](#간단한-구성으로-시작하기)
+- 권한 부여 흐름[link](#)
+  -  인증 코드
+  -  클라이언트 자격 증명
+  -  토큰 갱신
+  -  디바이스 코드
+  -  토큰 교환
+   
 - 토큰 형식
+  - JWT
+  - Opaque
+    
 - 클라이언트 인증
+  - client_secret_basic
+  - client_secret_post
+  - client_secret_jwt
+  - private_key_jwt
+  - tls_client_auth
+  - self_signed_tls_client_auth
+  - none (public clients)
+    
+- 프로토콜 엔드포인트
+  - OAuth2 Authorization Endpoint
+  - OAuth2 Device Authorization Endpoint
+  - OAuth2 Token Endpoint
+  - OAuth2 Device Verification Endpoint
+  - OAuth2 Token Introspection Endpoint
+  - OAuth2 Token Revocation Endpoint
+  - OAuth2 Authorization Server Metadata Endpoint
+  - JWK Set Endpoint
+  - OpenID Connect 1.0 Provider Configuration Endpoint
+  - OpenID Connect 1.0 Logout Endpoint
+  - OpenID Connect 1.0 UserInfo Endpoint
+  - OpenID Connect 1.0 Client Registration Endpoint
 
 
 
