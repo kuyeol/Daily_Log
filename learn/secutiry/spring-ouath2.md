@@ -1,10 +1,36 @@
 # OAuth2
  _스프링 시큐리티 OAuth2_ 
 
+## Overview
+
+- Spring Security 기반 구현
+- Spring Authorization Server는 OAuth 2.1 및 OpenID Connect 1.0 사양과 기타 관련 사양 의 구현을 제공
+
+## 지원 기능
+
+- 권한 부여[](#간단한-구성으로-시작하기)
+- 토큰 형식
+- 클라이언트 인증
 
 
-- [Section 1](#간단한-구성으로-시작하기)
-- [Section 2: Example](#section-2-example)
+
+
+# Prerequisites
+
+- JDK17
+- Gradle
+- Plugin
+  - `org.springframework.boot' version '3.3.4'`
+- Dependencies 
+  - `org.springframework.boot:spring-boot-starter-security`
+  - `org.springframework.boot:spring-boot-starter-web`
+  - `org.springframework.boot:spring-boot-starter-oauth2-authorization-server`
+
+
+Contents
+---
+1. [YML 구성으로 간단한 구현](#간단한-구성으로-시작하기)
+
 
 ## Section 1
 
