@@ -6,6 +6,13 @@ Learning[^1]
 [^1]: 주석
 ---
 
+# 자바 
+
+[Core Java for the Impatient, 4th Edition](https://learning.oreilly.com/library/view/core-java-for/9780135404522/html/ch1/index.xhtml#ch1.1.1)
+
+## 알고리즘
+
+
 ## LLM 개발 _:accessibility:_
   - [ ] [_Build a Large Language Model_](https://learning.oreilly.com/library/view/build-a-large/9781633437166/OEBPS/Text/chapter-2.html#p9)[^2]
 
