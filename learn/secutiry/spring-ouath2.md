@@ -63,8 +63,10 @@ Contents
 - [[2]](#GrantType-Authorization-Server) _GrantType_ 인증 서버 구현
 
 ## 간단한 구성으로 시작하기
-
 - Spring Boot가 필요한 @Bean정의를 YML로 작성하여 제공한다 
+<details>
+	
+
 ```yml
 server:
   port: 9000
@@ -99,9 +101,13 @@ spring:
                 - "profile"
             require-authorization-consent: true
 ```
+ 
+</details>
+
+
 
 ## GrantType Authorization Server
-
+- [How-to: Implement an Extension Authorization Grant Type](https://docs.spring.io/spring-authorization-server/reference/guides/how-to-ext-grant-type.html)
 ---
 1. AuthenticationConverter
   - Create Class 
@@ -119,7 +125,7 @@ spring:
 - 권한 부여의 유효성을 검사
 - 권한이 있는 경우 액세스 토큰을 발급
    - Create Class 
-     - `GrantType``AuthenticationProvider` implements AuthenticationProvider
+     - `GrantTypeAuthenticationProvider` implements AuthenticationProvider
    - Instance Variable
      -  private final `OAuth2AuthorizationService` authorizationService;
      - private final `OAuth2TokenGenerator` < `?` extends `OAuth2Token` > tokenGenerator;
@@ -129,6 +135,7 @@ spring:
    - Methods
      - @Override public Authentication authenticate(Authentication authentication) throws AuthenticationException
      - @Override public boolean supports(Class<?> authentication)
+
 
 4. OAuth2 Token Endpoint
 ```java
