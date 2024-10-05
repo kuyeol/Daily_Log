@@ -3,7 +3,8 @@ Oreily E-Book List 📖
 ---
 # 인증 시험 및 코드 문제
 ## [OCP Oracle Certified Professional Java SE 17](https://learning.oreilly.com/library/view/ocp-oracle-certified/9780137993857/ch01.xhtml#sec1_1)[^1]
-
+- 시각화 구조 설명
+- 리뷰 문제 제공
 - Oracle Certified Professional Java SE 17[Java SE 17 Developer,1Z0-829](https://learning.oreilly.com/library/view/ocp-oracle-certified/9780137993857/appb.xhtml)
 - [모의고사: Java SE 17 Developer](https://learning.oreilly.com/library/view/ocp-oracle-certified/9780137993857/appe.xhtml)
 
