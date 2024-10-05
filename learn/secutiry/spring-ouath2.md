@@ -106,137 +106,60 @@ spring:
 
 
 
-## GrantType Authorization Server
-- [How-to: Implement an Extension Authorization Grant Type](https://docs.spring.io/spring-authorization-server/reference/guides/how-to-ext-grant-type.html)
----
-1. AuthenticationConverter
-  - Create Class 
+## GrantType Authorization Server [link](https://docs.spring.io/spring-authorization-server/reference/guides/how-to-ext-grant-type.html)
+
+> [!Note]
+> 토큰엔드포인트에서 
+
+
+### 1. AuthenticationConverter
+- 토큰 요청 시 반환 작업
+- Create Class 
     - GrantTypeAuthenticationConverter implements AuthenticationConverter
-  - Instance Variable
+- Instance Variable
     - null
-  - Constructor
+- Constructor
     - null
-  - methods
+- methods
     - @Nullable @Override public Authentication convert(HttpServletRequest request)
     - private static MultiValueMap<String, String> getParameters(HttpServletRequest request)
-                     
-2. AuthenticationProvider
-- 인증 제공자
-- 권한 부여의 유효성을 검사
-- 권한이 있는 경우 액세스 토큰을 발급
-   - Create Class 
+
+		     
+### 2. AuthenticationProvider
+- 인증을 제공
+	- 권한 부여의 유효성을 검사
+	- 권한이 있는 경우 액세스 토큰을 발급
+- Create Class 
      - `GrantTypeAuthenticationProvider` implements AuthenticationProvider
-   - Instance Variable
+- Instance Variable
      -  private final `OAuth2AuthorizationService` authorizationService;
      - private final `OAuth2TokenGenerator` < `?` extends `OAuth2Token` > tokenGenerator;
-   - Constructor
+- Constructor
      - OAuth2AuthorizationService
      - OAuth2TokenGenerator <? extends OAuth2Token>  
-   - Methods
+ - Methods
      - @Override public Authentication authenticate(Authentication authentication) throws AuthenticationException
      - @Override public boolean supports(Class<?> authentication)
 
 
-4. OAuth2 Token Endpoint
-```java
-import java.util.UUID;
+### 3. OAuth2 Token Endpoint
 
-import com.nimbusds.jose.jwk.source.JWKSource;
-import com.nimbusds.jose.proc.SecurityContext;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.oauth2.core.AuthorizationGrantType;
-import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
-import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
-import org.springframework.security.oauth2.server.authorization.InMemoryOAuth2AuthorizationService;
-import org.springframework.security.oauth2.server.authorization.OAuth2AuthorizationService;
-import org.springframework.security.oauth2.server.authorization.client.InMemoryRegisteredClientRepository;
-import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
-import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
-import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer;
-import org.springframework.security.oauth2.server.authorization.token.DelegatingOAuth2TokenGenerator;
-import org.springframework.security.oauth2.server.authorization.token.JwtGenerator;
-import org.springframework.security.oauth2.server.authorization.token.OAuth2AccessTokenGenerator;
-import org.springframework.security.oauth2.server.authorization.token.OAuth2RefreshTokenGenerator;
-import org.springframework.security.oauth2.server.authorization.token.OAuth2TokenGenerator;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.RequestMatcher;
-
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig {
-
-	@Bean
-	SecurityFilterChain authorizationServerSecurityFilterChain(
-			HttpSecurity http,
-			OAuth2AuthorizationService authorizationService,
-			OAuth2TokenGenerator<?> tokenGenerator) throws Exception {
-
-		OAuth2AuthorizationServerConfigurer authorizationServerConfigurer =
-				new OAuth2AuthorizationServerConfigurer();
-
-		authorizationServerConfigurer
-			.tokenEndpoint(tokenEndpoint ->
-				tokenEndpoint
-					.accessTokenRequestConverter( (1)
-						new CustomCodeGrantAuthenticationConverter())
-					.authenticationProvider( (2)
-						new CustomCodeGrantAuthenticationProvider(
-							authorizationService, tokenGenerator)));
-
-		RequestMatcher endpointsMatcher = authorizationServerConfigurer.getEndpointsMatcher();
-
-		http
-			.securityMatcher(endpointsMatcher)
-			.authorizeHttpRequests(authorize ->
-				authorize
-					.anyRequest().authenticated()
-			)
-			.csrf(csrf -> csrf.ignoringRequestMatchers(endpointsMatcher))
-			.apply(authorizationServerConfigurer);
-
-		return http.build();
-	}
-
-	@Bean
-	RegisteredClientRepository registeredClientRepository() {
-		RegisteredClient messagingClient = RegisteredClient.withId(UUID.randomUUID().toString())
-				.clientId("messaging-client")
-				.clientSecret("{noop}secret")
-				.clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
-				.authorizationGrantType(new AuthorizationGrantType("urn:ietf:params:oauth:grant-type:custom_code"))
-				.scope("message.read")
-				.scope("message.write")
-				.build();
-
-		return new InMemoryRegisteredClientRepository(messagingClient);
-	}
-
-	@Bean
-	OAuth2AuthorizationService authorizationService() {
-		return new InMemoryOAuth2AuthorizationService();
-	}
-
-	@Bean
-	OAuth2TokenGenerator<?> tokenGenerator(JWKSource<SecurityContext> jwkSource) {
-		JwtGenerator jwtGenerator = new JwtGenerator(new NimbusJwtEncoder(jwkSource));
-		OAuth2AccessTokenGenerator accessTokenGenerator = new OAuth2AccessTokenGenerator();
-		OAuth2RefreshTokenGenerator refreshTokenGenerator = new OAuth2RefreshTokenGenerator();
-		return new DelegatingOAuth2TokenGenerator(
-				jwtGenerator, accessTokenGenerator, refreshTokenGenerator);
-	}
-
-}
-```
-AuthenticationConverterOAuth2 토큰 엔드포인트 구성에 추가합니다 .
-AuthenticationProviderOAuth2 토큰 엔드포인트 구성에 추가합니다 .
+- 토큰 엔드포인트 생성
+	-  AuthenticationConverterOAuth2 토큰 엔드포인트 구성에 추가 	
+	-  AuthenticationProviderOAuth2 토큰 엔드포인트 구성에 추가	 	
+- Create Class 
+     - @Configuration @EnableWebSecurity
+     - SecurityConfig.java
+- Instance Variable
+	- -
+- Constructor
+   	- -
+ - Methods
+     - @Bean SecurityFilterChain
+     - authorizationServerSecurityFilterChain(HttpSecurity, OAuth2AuthorizationService, OAuth2TokenGenerator<?> ) throws Exception
 
 
-
-4. Access Token
+### 4. Access Token
 - 액세스 토큰 요청
 - 클라이언트 --> OAuth2
   - 토큰 엔드포인트에 다음(인증된) 요청을 수행하여 액세스 토큰을 요청할 수 있습니다.
@@ -255,7 +178,7 @@ grant_type=urn:ietf:params:oauth:grant-type:custom_code&code=7QR49T1W3
 
 
 
-
+---
 
 ## 기본 구성 내용
 
