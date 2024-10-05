@@ -11,7 +11,8 @@ Oreily E-Book List 📖
 한 포괄적인 가이드를 제공하는 것입니다.
 
 ## [OCP Java SE 17 Developer 학습 가이드](https://learning.oreilly.com/library/view/ocp-oracle-certified/9781119864585/f07.xhtml#head-2-289)
-
+- 리뷰질문에 문제와 해설 제공
+- 코드 실행 예제를 통한 학습 안
 
 
 
@@ -27,6 +28,9 @@ Oreily E-Book List 📖
 
 ## [Core Java, Volume I: Fundamentals, 13th Edition](https://learning.oreilly.com/library/view/core-java-volume/9780135328385/v1/ch1/index.xhtml#ch01lev1sec1)[^java.lang.0]
 [^java.lang.0]: `케이 S. 호스트만` 실제 프로젝트에 Java를 적용하고자 하는 진지한 프로그래머를 대상으로 합니다. 
+- 자바 이론 중심 설명
+- 자세함
+
 <details>
   
 ### 1 자바 소개
@@ -239,6 +243,7 @@ Oreily E-Book List 📖
 
 ## [Art of Computer Programming, The: Volume 1: Fundamental Algorithms, 3rd Edition](https://learning.oreilly.com/library/view/art-of-computer/9780321635754/ch01.xhtml#ch01lev1sec1)[^alg.java.1]
 [^alg.java.1]: `Donald E. Knuth`이 책 세트의 연습 문제 는 교실 학습뿐만 아니라 자기 학습을 위해 설계되었습니다. 정보를 특정 문제에 적용하고 읽은 내용을 생각하도록 격려하지 않고는 단순히 주제에 대해 읽는 것만으로 주제를 배우는 것은 어렵거나 불가능합니다. 더욱이 우리 모두는 스스로 발견한 것을 가장 잘 배웁니다. 따라서 연습문제는 이 책의 주요 부분을 형성합니다. 가능한 한 정보를 제공하고 즐겁고 유익한 문제를 선택하기 위해 확실한 시도가 이루어졌습니다.
+- 어려움 아직 무
 <details>
 
 ### 제1권.기본 알고리즘
