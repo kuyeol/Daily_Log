@@ -15,12 +15,12 @@ Oreily E-Book List 📖
 - 리뷰질문에 문제와 해설 제공
 - 코드 실행 예제를 통한 학습 안
 
-
+## [Java Challenges: 100+ Proven Tasks that Will Prepare You for Anything](https://learning.oreilly.com/library/view/java-challenges-100/9781484273951/html/519691_1_En_2_Chapter.xhtml)
 
 ## [Java Coding Problem](https://learning.oreilly.com/library/view/java-coding-problems/9781789801415/669348bf-970b-43cf-8330-1f692c6f7c75.xhtml)[^코딩문제]
 [^코딩문제]: Java Coding Problems 는 특히 초보자와 중급 Java 개발자에게 유용합니다. 그러나 여기서 살펴보는 문제는 모든 Java 개발자의 일상 업무에서 마주치는 문제입니다.[소스코드](https://github.com/PacktPublishing/Java-Coding-Problems/blob/master/Chapter01/P01_CountDuplicateCharacters/src/modern/challenge/Strings.java) 
 
-## [Java Challenges: 100+ Proven Tasks that Will Prepare You for Anything](https://learning.oreilly.com/library/view/java-challenges-100/9781484273951/html/519691_1_En_2_Chapter.xhtml)
+
 
 
 ---
