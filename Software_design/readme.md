@@ -6,7 +6,7 @@
 > 3. `객체상호작용`
 
 
-## 객체의 생성
+## 1. 객체의 생성
 - 객체 생성 디자인 패턴
   - Singleton:
     - Makes sure there is just one instance.
@@ -52,7 +52,7 @@
   - Builder:
     -  Helps in building the complex objects step by step.
 
-## 객체의 조합
+## 2 .객체의 조합
 - 구조적 설계 패턴
   - Adapter:
     - Acts as a bridge between two incompatible interfaces
@@ -68,7 +68,7 @@
     - Shares common parts of state between multiple objects to reduce memory.
   - Proxy:
     - Controls the access to an object.
-## 객체의 상호 작용
+## 3. 객체의 상호 작용
 - 행동 디자인 패턴
   - Observer:
     - Observes and notifies changes in multiple objects.
