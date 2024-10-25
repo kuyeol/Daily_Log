@@ -11,6 +11,9 @@ Oreily E-Book List 📖
 [^1]: 다. 이 책의 목표는 두 가지입니다. Java를 배우는 것뿐만 아니라 Java 인증 시험에 합격하기 위
 한 포괄적인 가이드를 제공하는 것입니다.
 
+## java persistence
+[java-persisternce](https://learning.oreilly.com/library/view/java-persistence-with/9781617290459/OEBPS/Text/01.html#ch01lev2sec8)
+
 ## [OCP Java SE 17 Developer 학습 가이드](https://learning.oreilly.com/library/view/ocp-oracle-certified/9781119864585/f07.xhtml#head-2-289)
 - 리뷰질문에 문제와 해설 제공
 - 코드 실행 예제를 통한 학습 안
