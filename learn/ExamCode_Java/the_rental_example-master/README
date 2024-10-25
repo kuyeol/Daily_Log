@@ -1,0 +1,19 @@
+The Rental Example is the first example on Martin Fowler's Refactoring.
+
+The intent is to generate statements of a customer's charges at a video store. The input is which movies the customer rented and for how long. The ouput is the partial and total charges, depending on how long the movie is rented and in the type of the movie (Regular, New Release or Children's). There is also frequent renter points that are calculated.
+
+The example starts with 3 classes (Movie, Rental and Customer) and only one significant method. The first goal is to generate statements in HTML. The second goal is to make it easy to add a new type of movie.
+
+I started making tests for the existing programming, as recommended.
+
+For the first part, the refactoring used are Extract Method, Renaming, Move Method and Replace Temp With Query. We end up with better code that enable us to easily add the implementation for a HTML statement.
+
+I implemented a tweak suggested on the book, to use polymorphism to generate the "plain" statement and the HTML statement. I created a Statement object with the main loop in it and with Template Methods for the header, details and footer of the statement.
+
+In the second part, everything gets more interesting. The refactoring used are Move Method, Self Encapsulate Fields, Replace Type Code with State/Strategy and Replace Conditional with Polymorphism. The main goal is to get rid of a switch statement. 
+
+It all starts with Pulling Down methods that calculated charges from the Rental to the Movie and then to a new class Price, leaving delegate methods in the trail. 
+
+Three Price classes are created (RegularPrice, NewReleasePrice and Childrens Price) all extending an abstract Price class. Movie uses this class and the charge calculation is moved to it. Then, you can start to override the implementation of this calculation. The same is done with the frequent renter points calculation.
+
+And we're done. That code improved a lot.

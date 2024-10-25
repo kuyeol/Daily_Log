@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+	<!-- Servlets -->
+
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+		<servlet-class>com.fkereki.mvpproject.server.LoginServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/mvpproject/login</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>worldServlet</servlet-name>
+		<servlet-class>com.fkereki.mvpproject.server.WorldServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>worldServlet</servlet-name>
+		<url-pattern>/mvpproject/world</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>xhrProxyServlet</servlet-name>
+		<servlet-class>com.fkereki.mvpproject.server.XhrProxyImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>xhrProxyServlet</servlet-name>
+		<url-pattern>/mvpproject/xhrproxy</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>fileProcess</servlet-name>
+		<servlet-class>com.fkereki.mvpproject.server.FileProcess</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>fileProcess</servlet-name>
+		<url-pattern>/mvpproject/fileprocess</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>fileProduce</servlet-name>
+		<servlet-class>com.fkereki.mvpproject.server.FileProduce</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>fileProduce</servlet-name>
+		<url-pattern>/mvpproject/fileproduce</url-pattern>
+	</servlet-mapping>
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Mvpproject.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<u:UiBinder xmlns:u='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:h='urn:import:com.fkereki.mvpproject.client'            
+             >
+  <g:FormPanel u:field="uploadForm">
+    <g:HTMLPanel>
+      <h1>FileUploadView</h1>
+      <table>
+        <tr>
+          <td>
+            <g:Label text='File to Upload:' />
+          </td>
+          <td>
+            <g:FileUpload u:field="fileToUpload" name="uploadedfile" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <g:Button u:field="uploadButton" text='Upload it' />
+          </td>
+        </tr>
+      </table>
+    </g:HTMLPanel>
+  </g:FormPanel>
+</u:UiBinder>

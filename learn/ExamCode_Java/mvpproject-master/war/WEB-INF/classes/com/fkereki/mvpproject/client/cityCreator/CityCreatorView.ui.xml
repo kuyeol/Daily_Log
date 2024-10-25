@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<u:UiBinder xmlns:u='urn:ui:com.google.gwt.uibinder'
+  xmlns:g='urn:import:com.google.gwt.user.client.ui'
+  xmlns:h='urn:import:com.fkereki.mvpproject.client.countryState'>
+  <g:HTMLPanel>
+    <h1>City Creator</h1>
+    <table>
+      <tr>
+        <td>Country/State:</td>
+        <td><h:CountryStateView u:field="countryState" /></td>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td><g:TextBox u:field="cityName" /></td>
+      </tr>
+      <tr>
+        <td>Accented Name:</td>
+        <td><g:TextBox u:field="cityAccentedName" /></td>
+      </tr>
+      <tr>
+        <td>Population:</td>
+        <td><g:TextBox u:field="cityPopulation" /></td>
+      </tr>
+      <tr>
+        <td>Latitude:</td>
+        <td><g:TextBox u:field="cityLatitude" /></td>
+      </tr>
+      <tr>
+        <td>Longitude:</td>
+        <td><g:TextBox u:field="cityLongitude" /></td>
+      </tr>
+    </table>
+    <br />
+    <g:Button u:field="addCityButton" text="Add City" />
+  </g:HTMLPanel>
+</u:UiBinder>
