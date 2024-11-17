@@ -29,7 +29,7 @@ public class ArrayIntegerList extends IntegerList {
 
     @Override
     protected IntegerList createEmptyInstance() {
-        return ArrayIntegerList.emptyList();
+        return ArrayIntegerLi ㅣst.emptyList();
     }
 
     @Override
