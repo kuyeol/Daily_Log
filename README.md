@@ -17,8 +17,8 @@ Welcome to my GitHub profile! I'm a passionate developer with interests in web d
 
 
 ## 📈 GitHub Stats
-![Kuyeol's GitHub stats](https://github-readme-stats.vercel.app/api?username=kuyeol&show_icons=true&theme=monokai)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kuyeol&show_icons=true&theme=dracula)
+![Kuyeol's GitHub stats](https://github-readme-stats.vercel.app/api?username=kuyeol&show_icons=true&)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kuyeol&show_icons=true&)
 ## 🔭 Projects I'm working on
 - **[Project 1](https://github.com/kuyeol/social-microservice):** A web application for managing personal finances.
 - **[Project 2](https://github.com/kuyeol/project2):** An open-source library for data analysis.
