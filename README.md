@@ -18,22 +18,22 @@ tag:
 Welcome to my GitHub profile! I'm a passionate developer with interests in web development, data science, and open-source contributions. Here you'll find a collection of my projects, collaborations, and contributions to the community.
 
 ## 🔧 Technologies & Tools
-- **Languages:** JavaScript, Python, Java, C++
-- **Frameworks/Libraries:** React, Node.js, Django, Flask
+- **Languages:** Java, JavaScript, Python, C++
+- **Frameworks/Libraries:** Spring , Quarkus, React, Node.js
 - **Databases:** MySQL, PostgreSQL, MongoDB
 - **Tools:** Git, Docker, Kubernetes, AWS
 
 ## 🌱 What I'm currently learning
-- Advanced React patterns
-- Machine Learning with Python
-- Cloud computing with AWS
+- Java Complete Reference 13th
+- React patterns
+- Python
+
 
 ## 📈 GitHub Stats
-
 ![Kuyeol's GitHub stats](https://github-readme-stats.vercel.app/api?username=kuyeol&show_icons=true&theme=radical)
 
 ## 🔭 Projects I'm working on
-- **[Project 1](https://github.com/kuyeol/project1):** A web application for managing personal finances.
+- **[Project 1](https://github.com/kuyeol/social-microservice):** A web application for managing personal finances.
 - **[Project 2](https://github.com/kuyeol/project2):** An open-source library for data analysis.
 
 ## 💬 Get in touch
