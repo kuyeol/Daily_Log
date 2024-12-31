@@ -1,16 +1,3 @@
----
-title: "Model-View-Controller Pattern in Java: Streamlining Java Web Development"
-shortTitle: Model-View-Controller (MVC)
-description: "Learn about the Model-View-Controller (MVC) design pattern in Java, including its benefits, real-world examples, use cases, and how to implement it effectively in your applications."
-category: Architectural
-language: en
-tag:
-  - Architecture
-  - Client-server
-  - Decoupling
-  - Layered architecture
-  - Presentation
----
 
 
 # Hi there, I'm Kuyeol! 👋
