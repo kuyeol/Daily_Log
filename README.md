@@ -17,8 +17,8 @@ Welcome to my GitHub profile! I'm a passionate developer with interests in web d
 
 
 ## 📈 GitHub Stats
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kuyeol&show_icons=true)
-![Yeol's GitHub stats](https://github-readme-stats.vercel.app/api?username=kuyeol&show_icons=true&include_all_commits=true)
+![Top Langs](   https://github-readme-stats.vercel.app/api/top-langs/?username=kuyeol&show_icons=true&layout=compact)
+![Yeol's Stats](https://github-readme-stats.vercel.app/api/?username=kuyeol&show_icons=true&include_all_commits=true&theme=default)
 
 ## 🔭 Projects I'm working on
 
