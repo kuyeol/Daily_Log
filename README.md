@@ -23,6 +23,9 @@ Welcome to my GitHub profile! I'm a passionate developer with interests in web d
 ## 🔭 Projects I'm working on
 
 - **[Project 1](https://github.com/kuyeol/social-microservice):** A web application for managing personal finances.
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=kuyeol&repo=social-microservice)](https://github.com/kuyeol/social-microservice)
+
+
 - **[Project 2](https://github.com/kuyeol/project2):** An open-source library for data analysis.
 
 ## 💬 Get in touch
