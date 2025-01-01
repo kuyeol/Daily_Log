@@ -1,4 +1,53 @@
-비밀번호와 이메일, 아이디 패턴 검사에 사용될 수 있는 정규 표현식 상수들을 나열하고, 각 상수에 대한 설명을 제공하겠습니다.  **주의:** 이러한 패턴은 일반적인 가이드라인이며, 실제 적용 시에는 보안 요구사항과 사용자 경험을 고려하여 조정해야 합니다.  너무 복잡한 패턴은 사용자에게 불편을 줄 수 있고, 너무 간단한 패턴은 보안에 취약할 수 있습니다.
+
+
+```JAVA
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Example {
+    public static void main(String[] args) {
+        final String regex = "^[a-z0-9!#$%&'*+/=?^_`\\{|\\}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`\\{|\\}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\\b$";
+        final String string = "";
+        
+        final Pattern pattern = Pattern.compile(regex);
+        final Matcher matcher = pattern.matcher(string);
+        
+        if (matcher.find()) {
+            System.out.println("Full match: " + matcher.group(0));
+            
+            for (int i = 1; i <= matcher.groupCount(); i++) {
+                System.out.println("Group " + i + ": " + matcher.group(i));
+            }
+        }
+    }
+}
+```
+
+```JAVA
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Example {
+    public static void main(String[] args) {
+        final String regex = "(?:[A-Za-z0-9!#$%&'*+/=?.^_`\\{|\\}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`\\{|\\}~-]+)*|\\\"(?:[x01-x08x0bx0cx0e-x1fx21x23-x5bx5d-x7f]|[x01-x09x0bx0cx0e-x7f])*\\\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])).){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[x01-x08x0bx0cx0e-x1fx21-x5ax53-x7f]|[x01-x09x0bx0cx0e-x7f])+)])";
+        final String string = "\"Maximilian Milde\" <max.milde@freenet.de>,<Telefonkonferenz@telefonkonferenz.de>, \"Model Woman, Petra\" <muster114@googlemail.com>, 'Sample Lady, Eva' <eva.muda@gmx.net>, \"'Sample Man, Bernhard'\" <Mustermann.bernhard@t-online.de>, \"'Sample Woman, Ute'\" <utemusterfrau@gmail.com>, \"'Sample, Gisela'\" <Giselamuster50@gmx.de>, 'Mumann, Helmut' <hemumann@googlemail.com>, \"'Mustermann, Alexander'\" <AlexanderMustermann@web.de>, \"'Muster, Vera'\" <v.muster@web.de>, \"'sample woman, Sandra\"\" <sandra.Musterfrau@gmx.net>, \"'Schubert, Ina\"\" <inas31@gmx.de, Seitz, Irmtraud, Irmtraud.s.e@googlemail.com, Kutz, Holger, Claudia Krüger, Milde, F... Mannheim";
+        
+        final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+        final Matcher matcher = pattern.matcher(string);
+        
+        while (matcher.find()) {
+            System.out.println("Full match: " + matcher.group(0));
+            
+            for (int i = 1; i <= matcher.groupCount(); i++) {
+                System.out.println("Group " + i + ": " + matcher.group(i));
+            }
+        }
+    }
+}
+```
+
+.
 
 ```java
 public class PatternConstants {
@@ -72,12 +121,9 @@ if (email.matches(PatternConstants.EMAIL_PATTERN)) {
 } else {
   System.out.println("Invalid email");
 }
-```  
-
+```
 
 **참고:**
-
 * 정규 표현식은 복잡하고 성능에 영향을 줄 수 있으므로, 신중하게 사용해야 합니다.
-* 정규 표현식 테스트 사이트를 활용하여 패턴을 검증하고, 필요에 따라 수정할 수 있습니다. (예: regex101.com)
 * 보안 강화를 위해, 패턴 검사 외에도 비밀번호 히스토리 관리, 딕셔너리 공격 방어 등 추가적인 보안 조치를 구현하는 것이 좋습니다.  
-* 위 패턴들은 예시이며, 실제 요구사항에 맞게 수정해서 사용해야 합니다. 특히 비밀번호 정책은 시스템의 보안 수준에 따라 더욱 강력하게 설정해야 할 수 있습니다.
+
