@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+@import "path/to/theme";
 
 .nav-primary {
   margin: 20px 0;
@@ -61,6 +61,39 @@
       li {
         margin: 5px 0;
         font-size: 0.9em;
+      }
+    }
+  }
+}
+
+.directory-list {
+  list-style: none;
+  padding-left: 20px;
+  margin: 10px 0;
+
+  .directory-item {
+    margin: 5px 0;
+    
+    details {
+      margin-left: 10px;
+      
+      summary {
+        cursor: pointer;
+        color: #0366d6;
+        font-weight: bold;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    a {
+      color: #0366d6;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

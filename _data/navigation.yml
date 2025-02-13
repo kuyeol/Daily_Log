@@ -1,14 +1,21 @@
 main:
+  - title: "Home"
+    url: "/"
   - title: "Projects"
+    url: "/projects/"
+    directory: "/projects/"
     children:
       - title: "Social Microservice"
         url: /projects/social-microservice/
       - title: "Data Analysis"
         url: /projects/data-analysis/
   - title: "Documentation"
+    url: "/docs/"
+    directory: "/docs/"
     children:
       - title: "Design Patterns"
         url: /docs/design-patterns/
+        directory: "/docs/design-patterns/"
       - title: "Tutorials"
         url: /docs/tutorials/
   - title: "Blog"

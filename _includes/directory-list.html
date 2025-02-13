@@ -1,0 +1,22 @@
+{% assign path = include.path | default: "/" %}
+<ul class="directory-list">
+  {% for item in site.pages %}
+    {% if item.path contains path %}
+      <li class="directory-item">
+        {% if item.dir == path %}
+          <a href="{{ item.url | relative_url }}">{{ item.title | default: item.name }}</a>
+        {% endif %}
+        {% if item.dir contains path and item.dir != path %}
+          {% assign subdir = item.dir | split: path | last | split: "/" | first %}
+          {% unless printed_dirs contains subdir %}
+            {% assign printed_dirs = printed_dirs | push: subdir %}
+            <details>
+              <summary>{{ subdir }}</summary>
+              {% include directory-list.html path=item.dir %}
+            </details>
+          {% endunless %}
+        {% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
