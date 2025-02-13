@@ -12,6 +12,9 @@ Welcome to my GitHub profile! I'm a passionate developer with interests in web d
 - [Projects](/projects/)
 - [About](/about/)
 
+## 📚 Content Summary
+{% include summary-list.html %}
+
 ## 🔧 Technologies & Tools
 - **Languages:** Java, JavaScript, Python, C++
 - **Frameworks/Libraries:** Spring , Quarkus, React, Node.js

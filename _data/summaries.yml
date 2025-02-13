@@ -1,0 +1,10 @@
+categories:
+  design_patterns:
+    path: /docs/design-patterns/
+    description: "Design patterns implementations and examples"
+  projects:
+    path: /projects/
+    description: "Current and past development projects"
+  tutorials:
+    path: /docs/tutorials/
+    description: "Programming tutorials and guides"
