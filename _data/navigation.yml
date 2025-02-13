@@ -1,6 +1,8 @@
 main:
+
   - title: "Home"
     url: "/"
+    
   - title: "Projects"
     url: "/projects/"
     directory: "/projects/"
@@ -9,14 +11,16 @@ main:
         url: /projects/social-microservice/
       - title: "Data Analysis"
         url: /projects/data-analysis/
+        
   - title: "Documentation"
-    url: "/docs/"
-    directory: "/docs/"
+    url: "/android/"
+    directory: "/android/"
     children:
-      - title: "Design Patterns"
-        url: /docs/design-patterns/
-        directory: "/docs/design-patterns/"
+      - title: "Documentation"
+        url: /android/docd/
+        directory: "/android/docd/"
       - title: "Tutorials"
         url: /docs/tutorials/
+        
   - title: "Blog"
     url: /blog/
