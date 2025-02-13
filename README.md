@@ -2,6 +2,11 @@
 
 {% include navigation.html %}
 
+{% include directory-list.html %}
+
+## 📚 Content Summary
+{% include summary-list.html %}
+
 Welcome to my GitHub profile! I'm a passionate developer with interests in web development, data science, and open-source contributions. Here you'll find a collection of my projects, collaborations, and contributions to the community.
 
 ## 📚 Navigation
@@ -12,8 +17,7 @@ Welcome to my GitHub profile! I'm a passionate developer with interests in web d
 - [Projects](/projects/)
 - [About](/about/)
 
-## 📚 Content Summary
-{% include summary-list.html %}
+
 
 ## 🔧 Technologies & Tools
 - **Languages:** Java, JavaScript, Python, C++
