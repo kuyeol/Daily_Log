@@ -10,6 +10,23 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-toc 
+  - jekyll-spaceship 
+  - jekyll-time-ago  
+  - jekyll-compose  
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-redirect-from
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-optional-front-matter
+  - jekyll-default-layout
+  - jekyll-avatar
+  - jekyll-mentions
+  
+
+ 
+
 
 # 제외할 파일/폴더
 exclude:
