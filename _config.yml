@@ -1,0 +1,25 @@
+title: Your Site Title
+description: Your site description
+#baseurl: "" # 저장소 이름이 username.github.io가 아닌 경우 저장소 이름을 입력
+url: "https://kuyeol.github.io/Daily_Log/" # 사이트 URL (예: https://username.github.io)
+
+# 빌드 설정
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 제외할 파일/폴더
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
