@@ -17,8 +17,8 @@ main:
     directory: "/android/"
     children:
       - title: "Documentation"
-        url: /android/docd/
-        directory: "/android/docd/"
+        url: /android/docs/
+        directory: "/android/docs/"
       - title: "Tutorials"
         url: /docs/tutorials/
         
