@@ -1,5 +1,0 @@
-*.class 
-
-# Gradle artifacts
-.gradle/
-build/

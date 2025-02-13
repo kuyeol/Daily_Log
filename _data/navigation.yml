@@ -1,0 +1,15 @@
+main:
+  - title: "Projects"
+    children:
+      - title: "Social Microservice"
+        url: /projects/social-microservice/
+      - title: "Data Analysis"
+        url: /projects/data-analysis/
+  - title: "Documentation"
+    children:
+      - title: "Design Patterns"
+        url: /docs/design-patterns/
+      - title: "Tutorials"
+        url: /docs/tutorials/
+  - title: "Blog"
+    url: /blog/

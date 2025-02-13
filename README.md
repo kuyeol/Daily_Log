@@ -1,6 +1,6 @@
-
-
 # Hi there, I'm Kuyeol! 👋
+
+{% include navigation.html %}
 
 Welcome to my GitHub profile! I'm a passionate developer with interests in web development, data science, and open-source contributions. Here you'll find a collection of my projects, collaborations, and contributions to the community.
 

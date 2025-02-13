@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
-<u:UiBinder xmlns:u='urn:ui:com.google.gwt.uibinder'
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-  <g:HTMLPanel>
-    <g:ListBox u:field="countryCode"/>
-    <g:ListBox u:field="stateCode"/>
-  </g:HTMLPanel>
-</u:UiBinder>

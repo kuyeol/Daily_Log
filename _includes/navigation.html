@@ -1,0 +1,16 @@
+<nav class="nav-primary">
+  {% for item in site.data.navigation.main %}
+    <div class="nav-item">
+      {% if item.children %}
+        <span class="nav-header">{{ item.title }}</span>
+        <ul>
+          {% for child in item.children %}
+            <li><a href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</nav>
