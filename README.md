@@ -4,6 +4,14 @@
 
 Welcome to my GitHub profile! I'm a passionate developer with interests in web development, data science, and open-source contributions. Here you'll find a collection of my projects, collaborations, and contributions to the community.
 
+## 📚 Navigation
+- [Home](/)
+- Design Patterns
+  - [MVC Pattern](/design-patterns/mvc/)
+  - [Observer Pattern](/design-patterns/observer/)
+- [Projects](/projects/)
+- [About](/about/)
+
 ## 🔧 Technologies & Tools
 - **Languages:** Java, JavaScript, Python, C++
 - **Frameworks/Libraries:** Spring , Quarkus, React, Node.js
