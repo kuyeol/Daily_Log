@@ -9,14 +9,16 @@
 
 ## 1. 기본 조건 정리
 
-1. **삼각형 $\(ABC\)$**에서  
+1. 삼각형 **$\(ABC\)$** 에서  
    - $\(\sin A : \sin C = 8 : 5\)$.  
-   - $외접원의 반지름(\(R\))이 7이다. 즉, \(\displaystyle BC = 2R \sin A = 14 \sin A,\; AB = 14 \sin C,\; AC = 14 \sin B.\)$
+   - 외접원의 반지름 $(\(R\))$이 7이다.     
+> [!Note]
+> 즉, $\(\displaystyle BC = 2R \sin A = 14 \sin A,\; AB = 14 \sin C,\; AC = 14 \sin B.\)$
 
-2. $**선분 \(AB\) 위의 점 \(D\)**는 \(AD : DB = 3 : 2\)$.  
+2. **$선분 \(AB\) 위의 점 \(D\)는 \(AD : DB = 3 : 2\)$**.  
    - 따라서 $\(AB\)를 5등분했을 때 \(AD = \tfrac{3}{5}AB,\; DB = \tfrac{2}{5}AB.\)$
 
-3. $**원 \(O\)**는 “중심이 \(A\)”이고 “점을 \(D\)가 지나는 원”이다.$
+3. **$원\(O\)$** 는 “중심이 $\(A\)”이고 “점을 \(D\)가 지나는 원”이다.$
    - $즉, \(\text{반지름} = AD\).$  
    - $이 원 \(O\)가 선분 \(AC\)와 만나는 점을 \(E\)라 하였으므로, \(\displaystyle AE = AD\).$
 
@@ -31,22 +33,29 @@
 ## 2. $\(\triangle ADE\)와 \(\triangle ABC\)의 넓이 비로부터 얻는 결과$
 
 ### 2.1 넓이 비의 기본 식
-- $\(\triangle ABC\)와 \(\triangle ADE\)는 공통으로 “각 \(A\)”를 끼고 있으므로,  $
-$\[
+- $\(\triangle ABC\)와 \(\triangle ADE\)는 공통으로 “각 \(A\)”를 끼고 있으므로,$
+  
+> $\[
     \frac{[\triangle ADE]}{[\triangle ABC]} 
     \;=\;
     \frac{\tfrac12 \,(AD)\,(AE)\,\sin A}{\tfrac12 \,(AB)\,(AC)\,\sin A}
     \;=\;
     \frac{AD}{AB} \times \frac{AE}{AC}.
   \]$
-- 문제에서 $\(\triangle ADE : \triangle ABC = 9 : 35 \implies \tfrac{[\triangle ADE]}{[\triangle ABC]} = \tfrac{9}{35}.\)$
+
+- 문제에서
+> $\(\triangle ADE : \triangle ABC = 9 : 35 \implies \tfrac{[\triangle ADE]}{[\triangle ABC]} = \tfrac{9}{35}.\)$
 
 ### $2.2 점 \(D, E\)의 정의에 따른 비율$
-1. $\(D\)는 \(AB\)를 3:2로 나누므로,  
-   \[
+
+1. $\(D\)는 \(AB\)를 3:2로 나누므로,$  
+   $\[
      \frac{AD}{AB} = \frac{3}{5}.
    \]$
-2. $\(E\)는 \(AC\)$ 위에 있으면서 $\(AE = AD\)$. 하지만 직접 $\(AE = \frac{3}{5}AB\)$ 라고 쓰기보다는, **넓이 비**에서 얻는 식을 활용합니다.
+   
+2. $\(E\)는 \(AC\)$ 위에 있으면서 $\(AE = AD\)$.
+   - 하지만 직접 $\(AE = \frac{3}{5}AB\)$ 라고 쓰기보다는,
+ **넓이 비**에서 얻는 식을 활용합니다.
 
 넓이 비 식에 대입하면
 $\[
@@ -66,7 +75,7 @@ $\[
                = \frac{3}{7}.
 \]$
 
-즉,
+> 즉,
 $\[
   AE : AC = 3 : 7.
 \]$
@@ -119,15 +128,15 @@ $\[
 
 ---
 
-## 4. 구체적 길이 계산 ( \(A = 90^\circ\) 가정하에 )
+## 4. 구체적 길이 계산 ( $\(A = 90^\circ\)$ 가정하에 )
 
-### 4.1 삼각형 \(ABC\)의 변 길이
-- \(BC = 2R = 14\)  (직각 대각선 = 지름)  
-- \(\sin C = \tfrac{5}{8} \implies AB = 14 \sin C = 14 \times \tfrac{5}{8} = 8.75.\)  
-- 각 \(B = 90^\circ - C\)이므로 \(\sin B = \cos C = \sqrt{1 - \sin^2 C} = \sqrt{1 - (5/8)^2} = \sqrt{\tfrac{39}{64}} = \tfrac{\sqrt{39}}{8}.\)  
-  \(\quad \therefore AC = 14 \sin B = 14 \times \tfrac{\sqrt{39}}{8} = \tfrac{7\sqrt{39}}{4}\approx 10.93.\)
+### 4.1 삼각형 $\(ABC\)$의 변 길이
+- $\(BC = 2R = 14\)$  (직각 대각선 = 지름)  
+- $\(\sin C = \tfrac{5}{8} \implies AB = 14 \sin C = 14 \times \tfrac{5}{8} = 8.75.\)  $
+- 각 $\(B = 90^\circ - C\)이므로 \(\sin B = \cos C = \sqrt{1 - \sin^2 C} = \sqrt{1 - (5/8)^2} = \sqrt{\tfrac{39}{64}} = \tfrac{\sqrt{39}}{8}.\)$  
+  $\(\quad \therefore AC = 14 \sin B = 14 \times \tfrac{\sqrt{39}}{8} = \tfrac{7\sqrt{39}}{4}\approx 10.93.\)$
 
-### 4.2 점 \(D\)의 위치
+### 4.2 점 $\(D\)$의 위치
 - \(AB = 8.75\)를 \(3:2\)로 나누므로,  
   \(\displaystyle AD = \tfrac{3}{5} \times 8.75 = 5.25,\quad DB = 3.5.\)
 - 원 \(O\)의 반지름 \(= AD = 5.25.\)
