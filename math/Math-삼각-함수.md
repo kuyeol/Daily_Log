@@ -1,5 +1,187 @@
 
-# **수학- 삼각함수**
+
+
+# **수학 - 삼각함수 (상세 풀이)**
+
+주어진 문제의 그림과 조건에 따라 삼각형 \(PBC\) 넓이의 최댓값을 구하는 과정을 아주 자세히 설명합니다. 각 단계별 논리와 계산 과정을 최대한 상세하게 풀어서, 이해를 돕고자 합니다.
+
+## 1. 문제 분석 및 기본 조건 정리
+
+**주어진 조건:**
+
+*   삼각형 \(ABC\)에서 \(\overline{AD} : \overline{DB} = 3 : 2\) 인 점 \(D\)가 선분 \(AB\) 위에 있습니다.
+*   점 \(A\)를 중심으로 하고 점 \(D\)를 지나는 원 \(O\)가 있습니다.
+*   원 \(O\)와 선분 \(AC\)가 만나는 점을 \(E\)라고 합니다.
+*   \(\sin A : \sin C = 8 : 5\) 입니다.
+*   \(\triangle ADE : \triangle ABC = 9 : 35\) 입니다.
+*   삼각형 \(ABC\)의 외접원의 반지름의 길이는 7입니다. (\(R = 7\))
+*   \(\overline{AB} < \overline{AC}\) 입니다.
+*   원 \(O\) 위의 점 \(P\)에 대하여 삼각형 \(PBC\)의 넓이의 최댓값을 구해야 합니다.
+
+**그림에 표시 및 추가 정보 도출:**
+
+1.  **원 \(O\)의 성질:** 원 \(O\)는 점 \(A\)를 중심으로 하고 점 \(D\)를 지나므로, \(\overline{AD}\)는 원 \(O\)의 반지름입니다.  또한, 점 \(E\)도 원 \(O\) 위에 있으므로, \(\overline{AE}\)도 원 \(O\)의 반지름입니다. 따라서 \(\overline{AD} = \overline{AE}\) 입니다.
+
+2.  **사인 법칙:** 삼각형 \(ABC\)에서 사인 법칙을 적용하면,
+    \(\frac{\overline{BC}}{\sin A} = \frac{\overline{AB}}{\sin C} = \frac{\overline{AC}}{\sin B} = 2R\)
+    여기서 \(R\)은 외접원의 반지름이고, \(R = 7\)이므로,
+    \(\overline{BC} = 14\sin A\), \(\overline{AB} = 14\sin C\), \(\overline{AC} = 14\sin B\) 입니다.
+
+3.  **선분 비율:** \(\overline{AD} : \overline{DB} = 3 : 2\) 이므로, \(\overline{AB}\)를 5등분했을 때 \(\overline{AD}\)는 3칸, \(\overline{DB}\)는 2칸에 해당합니다.  따라서,
+    \(\overline{AD} = \frac{3}{5}\overline{AB}\), \(\overline{DB} = \frac{2}{5}\overline{AB}\) 입니다.
+
+## 2. \(\triangle ADE\)와 \(\triangle ABC\)의 넓이 비 활용 (상세 풀이)**
+
+\(\triangle ADE\)와 \(\triangle ABC\)는 각 \(A\)를 공통으로 가지고 있습니다.  삼각형의 넓이는 "(\(\frac{1}{2}\) × 두 변의 길이 × 끼인각의 사인)"으로 구할 수 있습니다.  따라서,
+
+*   \(\triangle ADE\)의 넓이: \([\triangle ADE] = \frac{1}{2} \cdot \overline{AD} \cdot \overline{AE} \cdot \sin A\)
+*   \(\triangle ABC\)의 넓이: \([\triangle ABC] = \frac{1}{2} \cdot \overline{AB} \cdot \overline{AC} \cdot \sin A\)
+
+두 삼각형의 넓이 비는 다음과 같이 표현됩니다.
+
+\(\displaystyle \frac{[\triangle ADE]}{[\triangle ABC]} = \frac{\frac{1}{2} \cdot \overline{AD} \cdot \overline{AE} \cdot \sin A}{\frac{1}{2} \cdot \overline{AB} \cdot \overline{AC} \cdot \sin A}\)
+
+\(\frac{1}{2}\) 과 \(\sin A\)는 공통 인자이므로 약분됩니다.
+
+\(\displaystyle \frac{[\triangle ADE]}{[\triangle ABC]} = \frac{\overline{AD} \cdot \overline{AE}}{\overline{AB} \cdot \overline{AC}} = \frac{\overline{AD}}{\overline{AB}} \times \frac{\overline{AE}}{\overline{AC}}\)
+
+문제에서 \(\triangle ADE : \triangle ABC = 9 : 35\) 라고 주어졌으므로, \(\frac{[\triangle ADE]}{[\triangle ABC]} = \frac{9}{35}\) 입니다.
+
+또한, 1단계에서 \(\overline{AD} = \frac{3}{5}\overline{AB}\) 임을 구했으므로, \(\frac{\overline{AD}}{\overline{AB}} = \frac{3}{5}\) 입니다.
+
+이 값들을 넓이 비 식에 대입하면,
+
+\(\displaystyle \frac{9}{35} = \frac{3}{5} \times \frac{\overline{AE}}{\overline{AC}}\)
+
+\(\frac{\overline{AE}}{\overline{AC}}\) 를 구하기 위해 양변에 \(\frac{5}{3}\) 를 곱합니다.
+
+\(\displaystyle \frac{\overline{AE}}{\overline{AC}} = \frac{9}{35} \times \frac{5}{3} = \frac{3}{7}\)
+
+따라서 \(\overline{AE} : \overline{AC} = 3 : 7\) 입니다.  즉, \(\overline{AC}\)를 7등분했을 때 \(\overline{AE}\)는 3칸에 해당합니다.
+
+\(\overline{AE} = \overline{AD}\) (원 \(O\)의 반지름) 이므로, \(\overline{AD} = \frac{3}{5}\overline{AB}\) 와 \(\overline{AE} = \frac{3}{7}\overline{AC}\) 라는 중요한 관계를 얻었습니다.
+
+## 3. \(\sin A : \sin C = 8:5\) 와 \(\overline{AB} < \overline{AC}\) 조건 활용 (상세 풀이)**
+
+\(\sin A : \sin C = 8 : 5\) 이므로, 비례상수 \(k\) (\(k > 0\))를 도입하여 \(\sin A = 8k\), \(\sin C = 5k\) 로 나타낼 수 있습니다.
+
+\(\overline{AB} < \overline{AC}\) 이고, \(\overline{AB} = 14\sin C\), \(\overline{AC} = 14\sin B\) 이므로, \(14\sin C < 14\sin B\), 즉 \(\sin C < \sin B\) 입니다.
+
+삼각형의 내각의 합은 \(180^\circ\) 이므로, \(A + B + C = 180^\circ\) 입니다.  \(A\), \(B\), \(C\)는 모두 삼각형의 내각이므로, \(0^\circ < A < 180^\circ\), \(0^\circ < B < 180^\circ\), \(0^\circ < C < 180^\circ\) 입니다.
+
+**핵심:** 여기서 \(A = 90^\circ\) 라고 *가정하지 않고* 문제를 해결해야 합니다.  이전 풀이와의 차이점이 바로 이 부분입니다.
+
+## 4. 변수 설정 및 관계식 도출
+
+원 \(O\)의 반지름을 \(r\)이라고 설정합니다. 그러면 \(\overline{AD} = \overline{AE} = r\) 입니다.
+
+\(\overline{AD} : \overline{DB} = 3:2\) 이므로, \(\overline{DB} = \frac{2}{3}r\) 입니다.  따라서 \(\overline{AB} = \overline{AD} + \overline{DB} = r + \frac{2}{3}r = \frac{5}{3}r\) 입니다.
+
+\(\overline{AE} : \overline{AC} = 3:7\) 이고 \(\overline{AE} = r\) 이므로, \(\overline{AC} = \frac{7}{3}r\) 입니다.  \(\overline{CE} = \overline{AC} - \overline{AE} = \frac{7}{3}r - r = \frac{4}{3}r\) 입니다.  편의상 \(\overline{CE} = x\) 라고 놓으면, \(x = \frac{4}{3}r\) 입니다.
+
+## 5. 넓이 비를 이용한 방정식 수립
+
+\(\triangle ADE\)와 \(\triangle ABC\)의 넓이를 다시 한번 \(r\)과 \(\sin A\)를 이용하여 표현합니다.
+
+*   \([\triangle ADE] = \frac{1}{2} \cdot \overline{AD} \cdot \overline{AE} \cdot \sin A = \frac{1}{2} \cdot r \cdot r \cdot \sin A = \frac{1}{2}r^2 \sin A\)
+*   \([\triangle ABC] = \frac{1}{2} \cdot \overline{AB} \cdot \overline{AC} \cdot \sin A = \frac{1}{2} \cdot \frac{5}{3}r \cdot \frac{7}{3}r \cdot \sin A = \frac{35}{18}r^2 \sin A\)
+
+주어진 넓이 비 \(\triangle ADE : \triangle ABC = 9:35\) 를 이용하면,
+
+\(\frac{[\triangle ADE]}{[\triangle ABC]} = \frac{\frac{1}{2}r^2 \sin A}{\frac{35}{18}r^2 \sin A} = \frac{9}{35}\)
+
+\(\sin A\) 와 \(r^2\)은 0이 아니므로 약분할 수 있습니다.
+
+\(\frac{\frac{1}{2}}{\frac{35}{18}} = \frac{9}{35}\)
+
+\(\frac{1}{2} \times \frac{18}{35} = \frac{9}{35}\)
+
+\(\frac{9}{35} = \frac{9}{35}\)
+
+이 식은 항등식이므로, 넓이 비 자체만으로는 \(r\) 값을 구할 수 없습니다.  다른 관계식을 찾아야 합니다.
+
+## 6. 사인 법칙과 코사인 법칙 활용
+
+\(\triangle ABC\)에서 사인 법칙을 적용하면,
+
+\(\frac{\overline{BC}}{\sin A} = \frac{\overline{AB}}{\sin C} = 2R = 14\)
+
+\(\overline{AB} = \frac{5}{3}r\) 이고, \(\sin A : \sin C = 8:5\) 이므로, \(\sin A = 8k\), \(\sin C = 5k\) 라고 하면,
+
+\(\frac{\overline{BC}}{8k} = \frac{\frac{5}{3}r}{5k} = 14\)
+
+\(\frac{\overline{BC}}{8} = \frac{\frac{1}{3}r}{1}  \implies \overline{BC} = \frac{8}{3}r\)
+
+이제 \(\triangle ABC\)에서 코사인 법칙을 적용합니다.  \(\angle ACB = \theta\) 라고 하면,
+
+\(\overline{AB}^2 = \overline{BC}^2 + \overline{AC}^2 - 2 \cdot \overline{BC} \cdot \overline{AC} \cdot \cos \theta\)
+
+\(\overline{AB} = \frac{5}{3}r\), \(\overline{BC} = \frac{8}{3}r\), \(\overline{AC} = \frac{7}{3}r\) 를 대입하면,
+
+\((\frac{5}{3}r)^2 = (\frac{8}{3}r)^2 + (\frac{7}{3}r)^2 - 2 \cdot \frac{8}{3}r \cdot \frac{7}{3}r \cdot \cos \theta\)
+
+\(\frac{25}{9}r^2 = \frac{64}{9}r^2 + \frac{49}{9}r^2 - \frac{112}{9}r^2 \cos \theta\)
+
+양변에 9를 곱하고 \(r^2\)으로 나누면 ( \(r \ne 0\) 이므로),
+
+\(25 = 64 + 49 - 112 \cos \theta\)
+
+\(112 \cos \theta = 88\)
+
+\(\cos \theta = \frac{88}{112} = \frac{11}{14}\)
+
+\(\sin^2 \theta + \cos^2 \theta = 1\) 이므로,
+
+\(\sin \theta = \sqrt{1 - \cos^2 \theta} = \sqrt{1 - (\frac{11}{14})^2} = \sqrt{\frac{196 - 121}{196}} = \sqrt{\frac{75}{196}} = \frac{5\sqrt{3}}{14}\)
+
+## 7. 외접원 반지름과 사인 법칙을 이용한 r 값 계산
+
+\(\triangle ABC\)의 외접원의 반지름이 7이므로, 사인 법칙을 다시 적용합니다.
+
+\(\frac{\overline{AB}}{\sin \theta} = 2R = 14\)
+
+\(\overline{AB} = \frac{5}{3}r\) 이고, \(\sin \theta = \frac{5\sqrt{3}}{14}\) 이므로,
+
+\(\frac{\frac{5}{3}r}{\frac{5\sqrt{3}}{14}} = 14\)
+
+\(\frac{5}{3}r = 14 \cdot \frac{5\sqrt{3}}{14}\)
+
+\(\frac{5}{3}r = 5\sqrt{3}\)
+
+\(r = 3\sqrt{3}\)
+
+## 8. 최대 높이 계산
+
+점 A에서 선분 BC에 내린 수선의 발을 H라고 하면, \(\overline{AH}\)는 \(\triangle ABC\)의 높이입니다.
+
+\(\overline{AH} = \overline{AC} \sin \theta = \frac{7}{3}r \cdot \sin \theta = \frac{7}{3} \cdot 3\sqrt{3} \cdot \frac{5\sqrt{3}}{14} = \frac{15}{2}\)
+
+\(\triangle PBC\)의 넓이가 최대가 되려면, 점 P는 A에서 BC에 내린 수선의 연장선과 원 O가 만나는 점(Q)에 위치해야 합니다.  이때, \(\triangle PBC\)의 높이는 \(\overline{QH} = \overline{AH} + r\) 입니다.
+
+\(\overline{QH} = \frac{15}{2} + 3\sqrt{3}\)
+
+## 9. 최대 넓이 계산
+
+\(\triangle PBC\)의 넓이의 최댓값은
+
+\(\frac{1}{2} \times \overline{BC} \times \overline{QH} = \frac{1}{2} \times \frac{8}{3}r \times (\frac{15}{2} + 3\sqrt{3})\)
+
+\(r = 3\sqrt{3}\) 을 대입하면,
+
+\(\frac{1}{2} \times \frac{8}{3} \cdot 3\sqrt{3} \times (\frac{15}{2} + 3\sqrt{3}) = 4\sqrt{3} (\frac{15}{2} + 3\sqrt{3}) = 30\sqrt{3} + 36\)
+
+## 10. 결론
+
+따라서, \(\triangle PBC\) 넓이의 최댓값은 \(36 + 30\sqrt{3}\) 입니다.
+
+
+
+
+
+---
+잘못된 버전
+---
+ **수학- 삼각함수**
 
 > [!Note]
 > 아래 해결 과정을 하나씩 따라가면, 삼각형 \(PBC\)의 넓이 최댓값이 어떻게 나오고 왜 그 값이 되는지 알 수 있습니다.  
