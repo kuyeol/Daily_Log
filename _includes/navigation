@@ -1,0 +1,10 @@
+<nav class="nav-primary">
+  {% for item in site.data.navigation.main %}
+    <div class="nav-item">
+      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% if item.directory %}
+        {% include directory-list.html path=item.directory %}
+      {% endif %}
+    </div>
+  {% endfor %}
+</nav>
